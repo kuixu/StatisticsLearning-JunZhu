@@ -80,6 +80,32 @@ Finally the equation is proved.
 
 \subsection{Optimization}
 
+Use the Lagrange multiplier method to solve the following problem:
+\begin{equation}
+    \begin{aligned}
+        \min_{x_1, x_2}    \qquad& x_{1}^{2} + x_{2}^{2} - 1 \\
+        s.t.\qquad & x_{1} + x_{2} - 1 =0 \\
+        & 2x_{1} - x_{2} \ge 0
+    \end{aligned}
+\end{equation}    
+
+\textbf{Solution:} Consider the above equation is consist of inequality constraint functions and it is a nonlinear optimization problem, we can use the lagrange multiplier method with KKT condition to solve it. The Objective funtion is
+\begin{equation}
+    \mathcal{L}(x_1, x_2,\lambda, \mu) = x_{1}^{2} + x_{2}^{2} - 1 + \lambda \cdot \Big(x_{1} + x_{2} - 1\Big) + \mu \cdot \Big(2x_{1} - x_{2}\Big)
+\end{equation}    
+The certain conditions which are called KKT condition should satisfy,
+
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial(L)}{\partial(X)}\arrowvert_{X} &=0\\
+        \lambda_{j}  \ne 0 \\
+        \mu_{k}  \ge 0\\
+        \mu_{k} \cdot \Big(x_{1}^{*} + x_{2}^{*} - 1\Big) =0\\
+        x_{1}^{*} + x_{2}^{*} - 1 = 0\\
+        2x_{1}^{*}  - x_{2}^{*}  \le 0\\
+    \end{aligned}
+\end{equation}  
+
 Choose one problem from the following 1.3 and 1.4. A bonus would be given if
 you finished the both.
 
@@ -89,18 +115,36 @@ We toss a fair coin for a number of times and use H(head) and T(tail) to denote 
     H,\underbrace{T,T,...,T}_{k}.
 \end{equation}
 
-\textbf{Solution:} we asume that $E$ is the expection of the consecutive pattern $H,\underbrace{T,T,...,T}_{k}$, and $E_{T}^{k}$ is the   expection of $\underbrace{T,T,...,T}_{k}$. Consider an equivalent form of this pattern $H,\underbrace{T,T,...,T}_{k-1},K$, we have 
+\textbf{Solution:} we asume that $E$ is the expection of the consecutive pattern $H,\underbrace{T,T,...,T}_{k}$, and $E_{T}^{k}$ is the   expection of $\underbrace{T,T,...,T}_{k}$. Consider an equivalent form of this pattern $H,\underbrace{T,T,...,T}_{k-1},T$, we have 
 \begin{equation}  
 \left\{  
              \begin{array}{lr}  
              E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2}E_{T}^{k}, &  \\  
-             E_{T}^{k} = E_{T}^{k-1} + 1 + \dfrac{1}{2}E_{T}^{k} + \dfrac{1}{2} \times 0, &    
+             E_{T}^{k} = E_{T}^{k-1} + 1 + \dfrac{1}{2}E_{T}^{k} + \dfrac{1}{2} \times 0. &   E_{T}^{1} =2   
              \end{array}  
 \right.  
 \end{equation}  
 
-which $E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2}E_{T}^{k}$ shows the expection of toss of the first time. At the first time you may got $H$ or $T$, if you got $T$, you fail and will restart to tosses OK, 
+which $E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2}E_{T}^{k}$ shows the expection of the first toss. At the first time, you may get $H$ or $T$ with the  $\frac{1}{2}$ probability. If you got $H$, OK, you succuced and then you will try to get $k$ times $T$, the expection will be $\dfrac{1}{2}E_{T}^{k}$; If you got $T$, you fail and will restart to tosses and the expection will be $\dfrac{1}{2}E$. \\
+which $ E_{T}^{k} = E_{T}^{k-1} + 1 + \dfrac{1}{2}E_{T}^{k} + \dfrac{1}{2} \times 0$ shows the the expection of the $k-1$ times of $T$ ($E_{T}^{k-1}$) and the last toss. At the last toss, as for the first time, you will get $H$ or $T$ with the  $\frac{1}{2}$ probability. If you got $H$, you fail and you need to get $k$ times $T$ over again and the expection will be $\dfrac{1}{2}E_{T}^{k}$. If you got $T$, OK, you win the game, the expection will be $\dfrac{1}{2}E_{T}^{k}$; 
 
+Next, we solve the recursive function above
+
+\begin{equation}  
+    E_{T}^{k} = 2^{k+1} -2
+\end{equation} 
+$\Rightarrow$
+
+\begin{equation}  
+    E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2} (2^{k+1} -2)
+\end{equation} 
+$\Rightarrow$
+
+\begin{equation}  
+    E  =  2^{k+1}
+\end{equation} 
+
+So the expected number of tosses is $2^{k+1}$.
 
 
 \subsection{Probability}
@@ -123,10 +167,14 @@ so $P(p | x)$ should be
 
 \begin{equation}
     \begin{aligned}
-        P(p | x) &= \frac{P(x|p) P(p)}{\int P(x|p') P(p') dp'}
+        P(p | x) &= \frac{P(x|p) P(p)}{\int_{0}^{1} P(x|p') P(p') dp'}\\
+                 &= \frac{ \binom{m}{n}  p^{m} (1-p)^{n-m} \frac{1}{B(\alpha, \beta)} p^{\alpha - 1} (1-p)^{\beta-1}}{\int_{0}^{1} \binom{m}{n}  p^{m} (1-p)^{n-m} \frac{1}{B(\alpha, \beta)} p^{\alpha - 1} (1-p)^{\beta-1} dp}\\
+                 &= \frac{  p^{\alpha + m - 1} (1-p)^{\beta-1+n-m}}{\int_{0}^{1} p^{\alpha +m - 1} (1-p)^{\beta-1+n-m} dp}\\
+                 &=  \frac{  p^{\alpha + m - 1} (1-p)^{\beta-1+n-m}}{B(\alpha + m, \beta+n-m )}\\
+                 &= Beta(p|\alpha + m, \beta+n-m)
     \end{aligned}
 \end{equation}
-
+So, it implies that the Beta distribution can serve as a conjugate prior to the Bernoulli distribution.
 
 
 
