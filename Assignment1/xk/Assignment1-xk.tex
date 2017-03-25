@@ -5,6 +5,7 @@
 \usepackage{tikz} % Package for drawing
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{amssymb}
 
 \title{Assignment 1 for \#70240413 \\ "Statistical Machine Learning" }
 \author{Kui XU, 2016311209}
@@ -89,20 +90,39 @@ Use the Lagrange multiplier method to solve the following problem:
     \end{aligned}
 \end{equation}    
 
-\textbf{Solution:} Consider the above equation is consist of inequality constraint functions and it is a nonlinear optimization problem, we can use the lagrange multiplier method with KKT condition to solve it. The Objective funtion is
+\textbf{Solution:} Consider the above equation is consist of inequality constraint functions and it is a nonlinear optimization problem, we can use the lagrange multiplier method with KKT condition to solve it. We construct the Lagrangian function for the problem:
 \begin{equation}
-    \mathcal{L}(x_1, x_2,\lambda, \mu) = x_{1}^{2} + x_{2}^{2} - 1 + \lambda \cdot \Big(x_{1} + x_{2} - 1\Big) + \mu \cdot \Big(2x_{1} - x_{2}\Big)
+    \mathcal{L}(x,\lambda, \mu) = x_{1}^{2} + x_{2}^{2} - 1 + \lambda \cdot \Big(x_{1} + x_{2} - 1\Big) + \mu \cdot \Big(2x_{1} - x_{2}\Big)
 \end{equation}    
 The certain conditions which are called KKT condition should satisfy,
 
 \begin{equation}
     \begin{aligned}
-        \frac{\partial(L)}{\partial(X)}\arrowvert_{X} &=0\\
+        \frac{\partial(\mathcal{L})}{\partial(X)}\arrowvert_{X} &=0\\
         \lambda_{j}  \ne 0 \\
         \mu_{k}  \ge 0\\
         \mu_{k} \cdot \Big(x_{1}^{*} + x_{2}^{*} - 1\Big) =0\\
         x_{1}^{*} + x_{2}^{*} - 1 = 0\\
         2x_{1}^{*}  - x_{2}^{*}  \le 0\\
+    \end{aligned}
+\end{equation}  
+We set up the equations:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(x_1)} &=2 x_1 + \lambda +2 \mu = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(x_2)} &=2 x_2 + \lambda - \mu = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(\lambda)} &= x_1 + x_2 -1  = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(\mu)} &= 2 x_1 - x_2 = 0\\
+    \end{aligned}
+\end{equation} 
+
+We solve them: 
+\begin{equation}
+    \begin{aligned}
+        x_1 &= \frac{1}{3}\\
+        x_2 &= \frac{2}{3}\\
+        \lambda &= \frac{2}{9}\\
+        \mu &= -\frac{10}{9}\\
     \end{aligned}
 \end{equation}  
 
@@ -178,118 +198,136 @@ So, it implies that the Beta distribution can serve as a conjugate prior to the 
 
 
 
+\section{SVM}
 
 
+\subsection{From Primal to Dual}
 
-
-
-
-
-
-
-
-
-
-
-Differentiation allows for the calculation of the slope of the tangent of a curve at any given point as shown in Figure \ref{exampleplot}.
-
-\begin{figure}[!htbp]
-\begin{center}
-\begin{tikzpicture}
-\draw[domain=-2:2, color=blue] plot (\x, {1 - (\x)^2}) node[above = .5cm, right, color=blue] {$f(x)=1-x^2$};
-\draw[domain=-2:2, color=red] plot(\x,-1 * \x + 1.25) node[above = .5cm, right, color=red] {Tangent at $x=.5$};
-\draw [thick, ->] (-3,0) -- (3,0) node [above] {$x$};
-\draw [thick, ->] (0,-3) -- (0,3) node [right] {$y$};
-\node at (.5,.75) {\textbullet};
-\end{tikzpicture}
-\end{center}
-\caption{The plot of $f(x)=1-x^2$ with a tangent at $x=.5$.}\label{exampleplot}
-\end{figure}
-
-Differentiation is now a technique taught to mathematics students throughout the world. In this document I will discuss some aspects of differentiation.
-
-\section{Exploring the derivative using Sage}
-
-The definition of the limit of $f(x)$ at $x=a$ denoted as $f'(a)$ is:
+Consider the binary classification problem with training data $\{(x_i , y_i )\}^{N}_{i=1} (x_i \in \mathbb{R}^d , y_i \in \{0, 1\})$. Derive the dual problem of the following primal problem of linear SVM:
 
 \begin{equation}
-f'(a) = \lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+    \begin{aligned}
+        \min_{w, b, \xi}    \frac{\lambda}{2}{\|w\|}^2 &+ \sum_{i=1}^{N} \xi_i \\
+        s.t.\qquad  y_i(w^{\top} x_i + b) &\ge 1- \xi_i =0 \qquad \forall i =1,...,N\\
+        \xi_i &\ge 0 \qquad \forall i =1,...,N
+    \end{aligned}
+\end{equation}
+(Hint: Please note that we explicitly include the offset b here, which is a little
+different from the simplified expressions in the slides.)
+
+\textbf{Solution:} The Lagrangian functional of the the primal problem  of linear SVM above is:
+
+\begin{equation}
+   \mathcal{L}(w,b,\xi,\alpha, \mu) =  \frac{\lambda}{2}{\|w\|}^2 + \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] - \sum_{i=1}^{N} \mu_i \xi_i 
 \end{equation}
 
-The following code can be used in sage to give the above limit:
+and the KKT conditions are:
+\begin{equation}
+    \begin{aligned}
+        & 0 \in \partial \mathcal{L}(w,b,\xi,\alpha,\mu) \\
+        &\alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] =0 \forall i \\
+        & y_i(w^{\top} x_i + b) - 1+\xi_i \ge 0 \forall i\\
+        & \alpha_i \ge 0 \forall i\\
+    \end{aligned}
+\end{equation}
+The Lagrange problem:
+\begin{equation}
+   (\hat{w}, \hat{b},\hat{\xi},\hat{\alpha},\hat{\mu}) = arg \min_{w,b,\xi} \max_{\alpha,\mu}\mathcal{L}(w,b,\xi,\alpha,\mu) 
+\end{equation}
 
-\begin{verbatim}
-def illustrate(f, a):
-    """
-    Function to take a function and illustrate the limiting definition of a derivative at a given point.
-    """
-    lst = []
-    for h in srange(.01, 3, .01):
-        lst.append([h,(f(a+h)-f(a))/h])
-    return list_plot(lst, axes_labels=['$x$','$\\frac{f(%.02f+h)-f(%.02f)}{h}$' % (a,a)])
-\end{verbatim}
 
-\begin{figure}[!htbp]
-\begin{center}
-%\includegraphics[width=8cm]{sage1.png}
-\end{center}
-\caption{The derivative of $f(x)=1-x^2$ at $x=.5$ converging to -1 as $h\to0$.}
-\end{figure}
 
-If we want to plot the tangent at a point $\alpha$ to a function we can use the following:
 
-\begin{align}
-y=&ax+b&&\text{(definition of a straight line)}\nonumber\\
-  &f'(a)x+b&&\text{(definition of the derivative)}\nonumber\\
-  &f'(a)x+f(a)-f'(a)a&&\text{(we know that the line intersects $f$ at $(a,f(a))$}\nonumber
-\end{align}
+Solve the Lagrange problem:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \mathcal{L}}{\partial(w)}\mid_{\hat{w}} &= \lambda \hat{w} - \sum_{i} \alpha_i y_i x_i = 0\\
+        \hat{w} &= \frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i \\
+        \frac{\partial \mathcal{L}}{\partial(b)}\mid_{\hat{b}} &= \sum_{i} \alpha_i y_i = 0 \\
+        \frac{\partial \mathcal{L}}{\partial(\xi)}\mid_{\hat{\xi}} &= 1 - \mu - \alpha= 0 \\
+        \mu & = 1- \alpha \\
+        \alpha_i \ge 0
+    \end{aligned}
+\end{equation}
+then the dual problem:
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}(\hat{w},b,\xi,\alpha)  &= \frac{\lambda}{2}{\| \frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i \|}^2 + \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \alpha_i [y_i (\frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i )^{\top} x_i + b) - 1+\xi_i] - \sum_{i=1}^{N} \mu_i \xi_i \\
+    \end{aligned}
+\end{equation}
+and the KKT conditions of the dual problem are:
+\begin{equation}
+    \begin{aligned}
+        & 0 \in \partial \mathcal{L}(\hat{w},b,\xi,\alpha) \\
+        &\alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] =0 \qquad \forall i \\
+        & y_i(w^{\top} x_i + b) - 1+\xi_i \ge 0 \qquad \forall i\\
+        & \alpha_i \ge 0 \qquad \forall i\\
+    \end{aligned}
+\end{equation}
 
-We can combine this with the approach of the previous piece of code to see how the tangential line converges as the limiting definition of the derivative converges:
+Solve the dual problem:
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}(\hat{w},b,\xi,\alpha)  &=  \frac{\lambda}{2}{\| \frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i \|}^2 + \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \alpha_i [y_i (\frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i )^{\top} x_i + b) - 1+\xi_i] - \sum_{i=1}^{N} \mu_i \xi_i \\
+        &= - \frac{1}{\lambda}\sum_{i,j}\alpha_i \alpha_j y_i y_j x_i x_j - b \sum_{i}\alpha_i y_i + \sum_{i}\alpha_i (1-\xi_i) + \sum_{i} (1-\mu_i)\xi_i ,\\
+        &= \sum_{i}(\alpha_i -\alpha_i\xi_i +\xi_i - \mu_i \xi_i) - \frac{1}{\lambda}\sum_{i,j}\alpha_i \alpha_j y_i y_j x_i x_j \\
+        &= \sum_{i}(\alpha_i -\alpha_i\xi_i +\xi_i - (1-\alpha_i) \xi_i) - \frac{1}{\lambda}\sum_{i,j}\alpha_i \alpha_j y_i y_j x_i x_j \\
+        &= \pmb{\alpha}^{\top}  -  \frac{1}{\lambda} \pmb{\alpha}^{\top} Y G Y \pmb{\alpha}
+    \end{aligned}
+\end{equation}
 
-\begin{verbatim}
-def convergetangentialline(f, a, x1, x2, nbrofplots=50, epsilon=.1):
-    """
-    Function to make a tangential line converge
-    """
-    clrs = rainbow(nbrofplots)
-    k = 0
-    h = epsilon
-    p = plot(f, x, x1, x2)
-    while k < nbrofplots:
-        tangent(x) = fdash(f, a, h) * x + f(a) - fdash(f, a, h) * a
-        p += plot(tangent(x), x, x1, x2, color=clrs[k])
-        h += epsilon
-        k += 1
-    return p
-\end{verbatim}
 
-The plot shown in Figure \ref{lines} shows how the lines shown converge to the actual tangent to $1-x^2$ as $x=2$ (the red line is the `closest' curve).
+\subsection{Finding Support Vectors (Optional)}
+As you get the dual problem using KKT conditions. Now please argue from KKT conditions why the following hold:
 
-\begin{figure}[!htbp]
-\begin{center}
-%\includegraphics[width=8cm]{sage0.png}
-\end{center}
-\caption{Lines converging to the tangent curve as $h\to0$.}\label{lines}
-\end{figure}
+Sorry, I don't time to answer this question.
 
-Note here that the last plot is given using the \textbf{real} definition of the derivative and not the approximation.
+\section{IRLS for Logistic Regression}
 
-\section{Conclusions}
+For a binary classification problem $\{(x_i , y_i )\}^{N}_{i=1} (x_i \in \mathbb{R}^d , y_i \in \{0, 1\})$, the probabilistic decision rule according to "logistic regression" is
 
-In this report I have explored the limiting definition of the limit showing how as $h\to 0$ we can visualise the derivative of a function. The code involved \url{https://sage.maths.cf.ac.uk/home/pub/18/} uses the differentiation capabilities of Sage but also the plotting abilities.
+\begin{equation}
+    \begin{aligned}
+        P_w(y|x) = \frac{exp(y\pmb{w}^{\top}\pmb{x})}{1+exp(\pmb{w}^{\top}\pmb{x})}
+    \end{aligned}
+\end{equation}
 
-There are various other aspects that could be explored such as symbolic differentiation rules. For example:
+And hence the log-likelihood is
 
-$$\frac{dx^n}{dx}=(n+1)x^{n}\text{ if }x\ne-1$$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}(w) &= \log \prod_{i=1}^{N} P_w(y|x) \\
+        &= \sum_{i=1}^{N}(y_i\pmb{w}^{\top}\pmb{x} - log(1+exp(\pmb{w}^{\top}\pmb{x_i})))
+    \end{aligned}
+\end{equation}
+Please implement the IRLS algorithm to estimate the parameters of logistic regression
+\begin{equation}
+    \max_{\pmb{w} }\mathcal{L(\pmb{w})}
+\end{equation}
 
-Furthermore it is interesting to not that there exists some functions that \textbf{are not} differentiable at a point such as the function $f(x)=\sin(1/x)$ which is not differentiable at $x=0$. A plot of this function is shown in Figure \ref{notdiff}.
+and the L2-norm regularized logistic regression
 
-\begin{figure}[!htbp]
-\begin{center}
-%\includegraphics[width=8cm]{sage2.png}
-\end{center}
-\caption{None differentiable function at $x=0$.}\label{notdiff}
-\end{figure}
+
+\begin{equation}
+    \max_{\pmb{w} } - \frac{\lambda}{2}\Vert{\pmb{w}}^2 + \mathcal{L(\pmb{w})}
+\end{equation}
+
+where $\lambda$ is the positive regularization constant.
+
+$\qquad$ You may refer to the lecture slides for derivation details but you are more
+encouraged to derive the iterative update equations yourself.\\
+
+$\qquad$ Please compare the results of the two models on the "UCI a9a" dataset1. The suggested performance metrics to investigate are e.g. prediction accuracies (both on training and test data), number of IRLS iterations, L2-norm of $\Vert{\pmb{w}}_2$, etc. You may need to test a range of $\lambda$  values with e.g. cross validation for the regularized logistic regression.\\
+
+$\qquad$ Hint: You can use the convergence curves as shown in the lecture slides to
+show the convergence properties of these two methods.
+
+
+
+
+
+
+
 
 
 \bibliographystyle{plain}
