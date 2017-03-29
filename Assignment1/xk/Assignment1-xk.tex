@@ -1,12 +1,47 @@
 \documentclass[a4paper]{article}
-
 \usepackage{fullpage} % Package to use full page
 \usepackage{parskip} % Package to tweak paragraph skipping
 \usepackage{tikz} % Package for drawing
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{amssymb}
+\usepackage{listings}
+%%%%%%
+\usepackage{color}
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%%%%%%
 \title{Assignment 1 for \#70240413 \\ "Statistical Machine Learning" }
 \author{Kui XU, 2016311209}
 \date{2017/03/23}
@@ -225,9 +260,11 @@ and the KKT conditions are:
 \begin{equation}
     \begin{aligned}
         & 0 \in \partial \mathcal{L}(w,b,\xi,\alpha,\mu) \\
-        &\alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] =0 \forall i \\
-        & y_i(w^{\top} x_i + b) - 1+\xi_i \ge 0 \forall i\\
-        & \alpha_i \ge 0 \forall i\\
+        &\alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] =0 \qquad \forall i \\
+        & y_i(w^{\top} x_i + b) - 1+\xi_i \ge 0 \qquad \forall i\\
+        & \mu_i \xi_i = 0 \qquad \forall i\\
+        & \mu_i \ge 0 \qquad \forall i\\
+        & \alpha_i \ge 0 \qquad \forall i\\
     \end{aligned}
 \end{equation}
 The Lagrange problem:
@@ -246,15 +283,20 @@ Solve the Lagrange problem:
         \frac{\partial \mathcal{L}}{\partial(b)}\mid_{\hat{b}} &= \sum_{i} \alpha_i y_i = 0 \\
         \frac{\partial \mathcal{L}}{\partial(\xi)}\mid_{\hat{\xi}} &= 1 - \mu - \alpha= 0 \\
         \mu & = 1- \alpha \\
-        \alpha_i \ge 0
+        \alpha_i \ge 0\\
+        \mu \ge 0
     \end{aligned}
 \end{equation}
+
+
 then the dual problem:
 \begin{equation}
     \begin{aligned}
         \mathcal{L}(\hat{w},b,\xi,\alpha)  &= \frac{\lambda}{2}{\| \frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i \|}^2 + \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \alpha_i [y_i (\frac{1}{\lambda} \sum_{i} \alpha_i y_i x_i )^{\top} x_i + b) - 1+\xi_i] - \sum_{i=1}^{N} \mu_i \xi_i \\
     \end{aligned}
 \end{equation}
+
+
 and the KKT conditions of the dual problem are:
 \begin{equation}
     \begin{aligned}
@@ -279,8 +321,87 @@ Solve the dual problem:
 
 \subsection{Finding Support Vectors (Optional)}
 As you get the dual problem using KKT conditions. Now please argue from KKT conditions why the following hold:
+\begin{equation}
+    \begin{aligned}
+        \alpha_i=0 &\Rightarrow  y_i(w^{\top}x_i+b) \ge 1 \\
+        0 < \alpha_i < C &\Rightarrow  y_i(w^{\top}x_i+b) = 1 \\
+        \alpha_i=C &\Rightarrow  y_i(w^{\top}x_i+b) \le 1 \\
+    \end{aligned}
+\end{equation}
 
-Sorry, I don't time to answer this question.
+\textbf{Solution:} The equation in section 2.1 does not have a $C$ parameter, but this question is trying to discuss conditions based on $C$, so I add $C$ into the equation in section 2.1, where $C=\frac{1}{\lambda}$
+\begin{equation}
+    \begin{aligned}
+        \min_{w, b, \xi}    \frac{1}{2}{\|w\|}^2 &+ C \sum_{i=1}^{N} \xi_i \\
+        s.t.\qquad  y_i(w^{\top} x_i + b) &\ge 1- \xi_i =0 \qquad \forall i =1,...,N\\
+        \xi_i &\ge 0 \qquad \forall i =1,...,N
+    \end{aligned}
+\end{equation}
+
+The KKT conditions for the above equation, 
+\begin{equation}
+    \begin{aligned}
+        & 0 \in \partial \mathcal{L}(w,b,\xi,\alpha,\mu) \\
+        &\alpha_i [y_i(w^{\top} x_i + b) - 1+\xi_i] =0 \qquad \forall i \\
+        & y_i(w^{\top} x_i + b) - 1+\xi_i \ge 0 \qquad \forall i\\
+        & \mu_i \xi_i = 0 \qquad \forall i\\
+        & \xi_i \ge 0 \qquad \forall i\\
+        & \alpha_i \ge 0 \qquad \forall i\\
+    \end{aligned}
+\end{equation}
+
+So $\forall i$, we always have $\alpha_i=0$ or $y_i(w^{\top} x_i + b) = 1 -\xi_i $, \\
+When $\alpha_i = 0$, the samples will have no influence on $y_i(w^{\top} x_i + b)$\\
+When $\alpha_i > 0$, $y_i(w^{\top} x_i + b) = 1 -\xi_i $ is always right, the samples should be the support vector.\\
+
+Now, we can solve the above problem to get the detail range of $\alpha$ 
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \mathcal{L}}{\partial(\xi)}\mid_{\hat{\xi}} &= C - \mu_i - \alpha_i= 0 \\
+        \mu_i & = C- \alpha_i \\
+        \alpha_i &\ge 0 \\
+        \mu_i &\ge 0
+    \end{aligned}
+\end{equation}
+
+So, the range of $\alpha$ is 
+\begin{equation}
+    0 \le \alpha_i \le C
+\end{equation}
+Now we discuss the different condition by different value of $\alpha$\\
+When $\alpha_i = 0$, 
+\begin{equation}
+    \begin{aligned}
+    y_i(w^{\top} x_i + b) \ge 1 -\xi_i \\
+    \mu_i  & = C- \alpha_i \\
+    & = C\\
+    \Rightarrow & \xi_i = 0 \qquad (\mu_i \xi_i = 0 )\\
+    \Rightarrow & y_i(w^{\top} x_i + b) \ge 1  
+    \end{aligned}
+\end{equation}
+
+When $0 < \alpha_i < C$, the sample is just right on the margin.
+\begin{equation}
+    \begin{aligned}
+    y_i(w^{\top} x_i + b) &= 1 -\xi_i \\
+    \mu_i  & = C- \alpha_i =0 \\
+    \Rightarrow & \xi_i \ge 0 \qquad (\mu_i \xi_i = 0 )\\
+    \Rightarrow & y_i(w^{\top} x_i + b) \le 1  
+    \end{aligned}
+\end{equation}
+
+When $\alpha_i = C$,  the sample is in the gap.
+\begin{equation}
+    \begin{aligned}
+    y_i(w^{\top} x_i + b) &= 1 -\xi_i \\
+    \mu_i  & = C- \alpha_i < C\\
+    \Rightarrow & \xi_i = 0 \qquad (\mu_i \xi_i = 0 )\\
+    \Rightarrow & y_i(w^{\top} x_i + b) = 1  
+    \end{aligned}
+\end{equation}
+
+
+
 
 \section{IRLS for Logistic Regression}
 
@@ -309,7 +430,7 @@ and the L2-norm regularized logistic regression
 
 
 \begin{equation}
-    \max_{\pmb{w} } - \frac{\lambda}{2}\Vert{\pmb{w}}^2 + \mathcal{L(\pmb{w})}
+    \max_{\pmb{w} } - \frac{\lambda}{2}\Vert{\pmb{w}}\Vert_{2}^{2} + \mathcal{L(\pmb{w})}
 \end{equation}
 
 where $\lambda$ is the positive regularization constant.
@@ -323,10 +444,138 @@ $\qquad$ Hint: You can use the convergence curves as shown in the lecture slides
 show the convergence properties of these two methods.
 
 
+\subsection{Derivation}
+\textbf{Solution:} For the L2-norm regularized logistic regression
 
 
+\begin{equation}
+    \begin{aligned}
+    \mathcal{L}_{L2}(w) &= - \frac{\lambda}{2}{\lVert{\pmb{w}}\rVert}^2 + \mathcal{L(\pmb{w})}\\
+    & = \sum_{i=1}^{N}(y_i\pmb{w}^{\top}\pmb{x} - log(1+exp(\pmb{w}^{\top}\pmb{x_i})))  - \frac{\lambda}{2}{\lVert{\pmb{w}}\rVert}^2 
+    \end{aligned}
+\end{equation}
+
+We need to solve the $w^*$ such that 
+
+\begin{equation}
+    \begin{aligned}
+    \nabla{\mathcal{L}_{L2}(w^*)} &=0\\
+    \nabla{\mathcal{L}_{L2}(w_t)} &=  \sum_{i} {(y_i - \mu_i) x_i} - \lambda w_t 
+    &= X(y-\mu) - \lambda w_t \\
+    \mu_i &= \psi(w_t^{\top}x_i)
+    \end{aligned}
+\end{equation}
 
 
+The Hessian matrix is:
+
+\begin{equation}
+    \begin{aligned}
+    H_{L2} &=\nabla^2{\mathcal{L}_{L2}(w^*)} \Vert w_t \\
+    &= - \sum_{i}{(\mu_i(1-\mu_i))}x_i x_i^{\top} - \lambda I\\
+    &= - XRX^{\top} - \lambda I\\
+    \end{aligned}
+\end{equation}
+where $\qquad R_{ii} =\mu_i(1-\mu_i)$\\
+
+Now, we can solve $w_{t+1}$ for the L2-norm regularized logistic regression
+\begin{equation}
+    \begin{aligned}
+    w_{t+1} &=w_{t} - H^{-1} \nabla_w{\mathcal{L}_{L2}(w^t)}\\
+    &= w_{t} - (-XRX^{\top} - \lambda I)^{-1}  (X(y-\mu) - \lambda w_t)\\
+    &= w_{t} + (XRX^{\top} + \lambda I)^{-1}  (X(y-\mu) - \lambda w_t)\\
+    &= (XRX^{\top} + \lambda I)^{-1} \{ (XRX^{\top} + \lambda I)w_t + (X(y-\mu) - \lambda w_t) \} \\
+    &= (XRX^{\top} + \lambda I)^{-1} \{ XRX^{\top} w_t + \lambda I w_t + X(y-\mu) - \lambda w_t \}\\
+    &= (XRX^{\top} + \lambda I)^{-1} \{ XRX^{\top} w_t + X(y-\mu) \}\\
+    &=  (XRX^{\top} + \lambda I)^{-1} XRz
+    \end{aligned}
+\end{equation}
+where $z=X^{\top} w_t + R^{-1}(y-\mu)$
+
+
+\subsection{Implemention}
+
+ I implemented the algorithm using Python. IRLS can be run just by \textbf{import IRLS} and less than 5 lines code, and the Loss and accuracy curve on training and testing data can be ploted with only one line.
+
+
+%\begin{lstlisting}[language=Python]
+
+\begin{verbatim}
+import IRLS
+
+x_train, y_train  = IRLS.loadDotData("a9a/a9a")
+x_test,  y_test   = IRLS.loadDotData("a9a/a9a.t")
+
+# Run IRLS
+trainHistory = IRLS.train(x_train, y_train, x_test, y_test)
+IRLS.test(x_test, y_test, regularizer="")
+IRLS.plotLossAcc(trainHistory,"IRLS on a9a data")
+
+# Run IRLS with L2 norm regularized
+trainHistoryL2 = IRLS.train(x_train, y_train, x_test, y_test, regularizer="L2", w_lambda= 0.3)
+IRLS.test(x_test, y_test, regularizer="L2")
+IRLS.plotLossAcc(trainHistory,"IRLS-L2 on a9a data")
+\end{verbatim}
+%\end{lstlisting}
+
+The output log:
+\begin{verbatim}
+===== IRLS  ====
+Max Iteration:  50
+Early Stopping: 10
+
+[ 0/50] best model from 99999.000000 to 0.669441 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6694   valAcc 0.8455
+[ 1/50] best model from 0.669441 to 0.646152 
+ | trainLoss 0.6696   trainAcc 0.8452   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646152 to 0.623514 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8493
+[ 3/50] best model from 0.623514 to 0.608796 
+...
+[ 14/50] best model from 0.602329 to 0.602253 
+ | trainLoss 0.6028   trainAcc 0.8491   valLoss 0.6023   valAcc 0.8499
+[ 15/50] best model from 0.602253 to 0.602187 
+ | trainLoss 0.6027   trainAcc 0.8491   valLoss 0.6022   valAcc 0.8499
+...
+[ 25/50] best model from 0.601798 to 0.601796 
+ | trainLoss 0.6023   trainAcc 0.8491   valLoss 0.6018   valAcc 0.8499
+[ 26/50] model is not improved
+...
+Stoped by earlystoping, best model loss: 0.6018 in Iteration 25 
+
+ Testing IRLS  Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9014 - testAP: 0.7450 - testF1: 0.6531 - 
+ testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 38.5209
+\end{verbatim}
+
+
+Experiment setting:\\
+1. The maximum iteration is set to be 50, which can be set to be any positive value.\\
+2. The training will stop when the the model has not yet improved since sevral iteration, we can call this EarlyStopping.\\
+3. The Initial $W$ is set to be 0.\\
+4. A very samll value 1e-09 is added into when calculating the inverse of a matrix to avoid inversing a singularity matrix which can not calculating the inverse
+5. I import a loss function below to evaluate the training.
+\begin{equation}
+    \begin{aligned}
+    J(w) = \sum_{i} {y_i \log{(\frac{1}{1+e^{-w^{\top}x}})} +(1-y_i) \log{(1-\frac{1}{1+e^{-w^{\top}x}})}} 
+    \end{aligned}
+\end{equation}
+
+ The plot shown in Figure \ref{lines} shows the loss and the accuracy curve by IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 25, and the loss ($J(W)$) is 0.6018, $\Vert W \Vert_2^2$ is 38.5209, the best test accuracy is 0.8499, the AUC is 0.9014. 
+%[!htbp]
+\begin{figure}
+\begin{center}
+\includegraphics[width=16cm]{../model/IRLS.png}
+\end{center}
+\caption{Training performance with  on a9a with IRLS.}\label{lines}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=16cm]{../model/IRLS.png}
+\end{center}
+\caption{Training performance with  on a9a with IRLS.}\label{lines}
+\end{figure}
 
 
 
