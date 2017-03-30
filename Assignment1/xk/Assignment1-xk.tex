@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{enumerate}
 %%%%%%
 \usepackage{color}
 
@@ -495,10 +496,11 @@ where $z=X^{\top} w_t + R^{-1}(y-\mu)$
 
 \subsection{Implemention}
 
- I implemented the algorithm using Python. IRLS can be run just by \textbf{import IRLS} and less than 5 lines code, and the Loss and accuracy curve on training and testing data can be ploted with only one line.
+ I implemented the algorithm using Python. IRLS can be run just by \textbf{import IRLS} and less than 5 lines code, and the Loss and accuracy curve on training and testing data can be ploted with only one line.\\
 
 
 %\begin{lstlisting}[language=Python]
+examples of running \textbf{IRLS.py}\\
 
 \begin{verbatim}
 import IRLS
@@ -548,36 +550,74 @@ Stoped by earlystoping, best model loss: 0.6018 in Iteration 25
  testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 38.5209
 \end{verbatim}
 
+$\qquad$\\
 
 Experiment setting:\\
-1. The maximum iteration is set to be 50, which can be set to be any positive value.\\
-2. The training will stop when the the model has not yet improved since sevral iteration, we can call this EarlyStopping.\\
-3. The Initial $W$ is set to be 0.\\
-4. A very samll value 1e-09 is added into when calculating the inverse of a matrix to avoid inversing a singularity matrix which can not calculating the inverse
-5. I import a loss function below to evaluate the training.
-\begin{equation}
-    \begin{aligned}
-    J(w) = \sum_{i} {y_i \log{(\frac{1}{1+e^{-w^{\top}x}})} +(1-y_i) \log{(1-\frac{1}{1+e^{-w^{\top}x}})}} 
-    \end{aligned}
-\end{equation}
 
- The plot shown in Figure \ref{lines} shows the loss and the accuracy curve by IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 25, and the loss ($J(W)$) is 0.6018, $\Vert W \Vert_2^2$ is 38.5209, the best test accuracy is 0.8499, the AUC is 0.9014. 
+\begin{enumerate}[1.]
+\item The maximum iteration is set to be 50, which can be set to be any positive value.
+\item The training will stop when the the model has not yet improved since sevral iteration, we can call this EarlyStopping.
+\item The initial $W$ is set to be 0.
+\item A very samll value 1e-09 is added into when calculating the inverse of a matrix to avoid inversing a singularity matrix which can not calculating the inverse.
+\item I import a loss function below to evaluate the training.
+      \begin{equation}
+          \begin{aligned}
+          J(w) = \sum_{i} {y_i \log{(\frac{1}{1+e^{-w^{\top}x}})} +(1-y_i) \log{(1-\frac{1}{1+e^{-w^{\top}x}})}} 
+          \end{aligned}
+      \end{equation}
+\item In testing step, metrics (Accuracy / AUC / Average Precision / F1 score / Precision / Recall) are calculated.
+\item The best model(minimum loss) is saved into \textbf{model/} directory.
+\end{enumerate}
+
+$\qquad$ I test a set of $\lambda \in (1e-06,3)$ on the training set("UCI a9a/a9a") and validate the training model on the testing set("UCI a9a/a9a.t"), if I have more slack times, I will do a 10-fold cross validation. \\
+$\qquad$ From equation44, we know when $\lambda=0$, the algorithm is IRLS without L2 normalization, when $\lambda>0$, the algorithm is IRLS with L2 normalization. \\
+$\qquad$ In my implementation, A very samll value 1e-09 is added into when calculating the inverse of a matrix to avoid inversing a singularity matrix(maybe it is the data that makes a singularity matrix), so in a broad sense, my implementation of IRLS is always a L2 normalized IRLS. But in a narrow sense, as long as the $\lambda to 0$, the algorithm is IRLS without L2 normalization.
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=16cm]{../model/lambda_iter.png}
+\end{center}
+\caption{Convergence Iteration with a set of $\lambda$ on a9a with IRLS(L2).}\label{lambda_iter}
+\end{figure}
+Figure \ref{lambda_iter} shows the Convergence Iteration of a set of $\lambda$.  So the We can see that, when $\lambda \approx 0$, the convergence iteration is more than 20 times, when $\lambda \ge 0.1$, the convergence iteration is about 10 times, it shows that the L2 normalized IRLS has a fast convergence speed than IRLS. 
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=16cm]{../model/lambda_acc.png}
+\end{center}
+\caption{Test Accuracy with a set of $\lambda$ on a9a with IRLS(L2).}\label{lambda_acc}
+\end{figure}
+
+Figure \ref{lambda_acc} shows the Test Accuracy of a set of $\lambda$.  So the We can see that, when $\lambda \approx 0$, the convergence iteration is more than 20 times, when $\lambda \ge 0.1$, the convergence iteration is about 10 times, it shows that the L2 normalized IRLS has a fast convergence speed than IRLS. 
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=16cm]{../model/lambda_l2norm.png}
+\end{center}
+\caption{The L2 norm value of $W$ with a set of $\lambda$ on a9a.}\label{lambda_l2norm}
+\end{figure}
+
+Figure \ref{lambda_l2norm} shows the L2 norm value of $W$ with a set of $\lambda$.  The $W$ is decreased when $\lambda$ is larger. 
+
+
 %[!htbp]
-\begin{figure}
+\begin{figure}[!htbp]
 \begin{center}
 \includegraphics[width=16cm]{../model/IRLS.png}
 \end{center}
-\caption{Training performance with  on a9a with IRLS.}\label{lines}
+\caption{Training performance with IRLS on "UCI a9a" dataset.}\label{IRLS}
 \end{figure}
+Figure \ref{IRLS} shows the loss and the accuracy curve by IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 25, and the loss ($J(W)$) is 0.6018, $\Vert W \Vert_2^2$ is 38.5209, the best test accuracy is 0.8499, the AUC is 0.9014. 
 
-\begin{figure}
+\begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=16cm]{../model/IRLS.png}
+\includegraphics[width=16cm]{../model/IRLS_L2_w_0.3.png}
 \end{center}
-\caption{Training performance with  on a9a with IRLS.}\label{lines}
+\caption{Training performance with L2 normalized IRLS on "UCI a9a" dataset.}\label{IRLS_L2}
 \end{figure}
 
-
+Figure \ref{IRLS_L2} shows the loss and the accuracy curve by L2 normalized IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 9, and the loss ($J(W)$) is 0.6033, $\Vert W \Vert_2^2$ is 7.1097, the best test accuracy is 0.8499, the AUC is 0.9020. 
 
 \bibliographystyle{plain}
 %\bibliography{bibliography.bib}
