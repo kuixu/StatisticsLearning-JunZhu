@@ -1,0 +1,1166 @@
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0001
+
+[ 0/50] best model from 99999.000000 to 0.669462 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669462 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608797 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608797 to 0.603634 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603634 to 0.602966 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602966 to 0.602879 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602879 to 0.602803 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 8/50] best model from 0.602803 to 0.602732 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 9/50] best model from 0.602732 to 0.602672 
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 10/50] best model from 0.602672 to 0.602636 
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 11/50] best model from 0.602636 to 0.602626 
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 12/50] best model from 0.602626 to 0.602625 
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 13/50] best model from 0.602625 to 0.602625 
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 15/50] best model from 0.602625 to 0.602625 
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 17/50] best model from 0.602625 to 0.602625 
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 25/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+[ 26/50] model is not improved
+ | trainLoss 0.6031   trainAcc 0.8491   valLoss 0.6026   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6026 in Iteration 17 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9014 - testAP: 0.7450 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 16.6332
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0006
+
+[ 0/50] best model from 99999.000000 to 0.669462 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669462 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603634 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603634 to 0.602968 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602968 to 0.602884 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602884 to 0.602818 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 8/50] best model from 0.602818 to 0.602770 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 9/50] best model from 0.602770 to 0.602751 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 10/50] best model from 0.602751 to 0.602748 
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 11/50] best model from 0.602748 to 0.602748 
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 12/50] best model from 0.602748 to 0.602748 
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6032   trainAcc 0.8491   valLoss 0.6027   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6027 in Iteration 14 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9014 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 13.7950
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0011
+
+[ 0/50] best model from 99999.000000 to 0.669462 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669462 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603635 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603635 to 0.602969 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602969 to 0.602889 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602889 to 0.602830 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 8/50] best model from 0.602830 to 0.602798 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 9/50] best model from 0.602798 to 0.602790 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 10/50] best model from 0.602790 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 11/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 16/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 17/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 21/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 23/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 25/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 26/50] best model from 0.602789 to 0.602789 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 27/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 28/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6028 in Iteration 19 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9014 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 12.9096
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0016
+
+[ 0/50] best model from 99999.000000 to 0.669462 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669462 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603635 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603635 to 0.602971 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602971 to 0.602893 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602893 to 0.602842 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 8/50] best model from 0.602842 to 0.602818 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 9/50] best model from 0.602818 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 10/50] best model from 0.602815 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 11/50] best model from 0.602815 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 12/50] best model from 0.602815 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 14/50] best model from 0.602815 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 18/50] best model from 0.602815 to 0.602815 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 25/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6028 in Iteration 16 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9014 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 12.3848
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0021
+
+[ 0/50] best model from 99999.000000 to 0.669462 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669462 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603636 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603636 to 0.602972 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602972 to 0.602897 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602897 to 0.602852 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602852 to 0.602835 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 9/50] best model from 0.602835 to 0.602833 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 10/50] best model from 0.602833 to 0.602833 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 12/50] best model from 0.602833 to 0.602833 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 18/50] best model from 0.602833 to 0.602833 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 23/50] best model from 0.602833 to 0.602833 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6028 in Iteration 15 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 12.0154
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0026
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603636 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603636 to 0.602974 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602974 to 0.602901 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602901 to 0.602861 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602861 to 0.602848 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 9/50] best model from 0.602848 to 0.602847 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 10/50] best model from 0.602847 to 0.602847 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 11/50] best model from 0.602847 to 0.602847 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 12/50] best model from 0.602847 to 0.602847 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 20/50] best model from 0.602847 to 0.602847 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6028   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6028 in Iteration 15 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 11.7323
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0031
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608798 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608798 to 0.603637 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603637 to 0.602975 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602975 to 0.602905 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602905 to 0.602869 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602869 to 0.602860 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602860 to 0.602859 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602859 to 0.602859 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602859 to 0.602859 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] best model from 0.602859 to 0.602859 
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6033   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 14 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 11.5040
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0036
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603637 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603637 to 0.602977 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602977 to 0.602909 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602909 to 0.602877 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602877 to 0.602869 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602869 to 0.602869 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602869 to 0.602869 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] best model from 0.602869 to 0.602869 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 11.3135
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0041
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646181 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646181 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603638 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603638 to 0.602978 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602978 to 0.602913 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602913 to 0.602884 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602884 to 0.602878 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602878 to 0.602878 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602878 to 0.602878 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] best model from 0.602878 to 0.602878 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 11.1504
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0046
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623535 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623535 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603638 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603638 to 0.602979 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602979 to 0.602916 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602916 to 0.602890 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602890 to 0.602886 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602886 to 0.602886 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602886 to 0.602886 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602886 to 0.602886 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] best model from 0.602886 to 0.602886 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 14 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 11.0082
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0051
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603639 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603639 to 0.602981 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602981 to 0.602920 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602920 to 0.602896 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602896 to 0.602893 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602893 to 0.602892 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602892 to 0.602892 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602892 to 0.602892 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] best model from 0.602892 to 0.602892 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] best model from 0.602892 to 0.602892 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 15 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.8824
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0056
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603639 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603639 to 0.602982 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602982 to 0.602923 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602923 to 0.602902 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602902 to 0.602899 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602899 to 0.602899 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602899 to 0.602899 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602899 to 0.602899 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.7698
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0061
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608799 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608799 to 0.603640 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603640 to 0.602983 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602983 to 0.602926 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602926 to 0.602907 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602907 to 0.602905 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602905 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 24/50] best model from 0.602904 to 0.602904 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 25/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 26/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 27/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 28/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 19 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9015 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.6679
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0066
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603640 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603640 to 0.602985 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602985 to 0.602929 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602929 to 0.602912 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602912 to 0.602910 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602910 to 0.602910 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602910 to 0.602910 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602910 to 0.602910 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.5751
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0071
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603641 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603641 to 0.602986 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602986 to 0.602932 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602932 to 0.602916 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602916 to 0.602915 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602915 to 0.602915 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602915 to 0.602915 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602915 to 0.602915 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.4899
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0076
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603641 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603641 to 0.602987 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602987 to 0.602935 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602935 to 0.602921 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602921 to 0.602919 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602919 to 0.602919 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] best model from 0.602919 to 0.602919 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602919 to 0.602919 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.4113
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0081
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603641 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603641 to 0.602989 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602989 to 0.602938 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602938 to 0.602925 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602925 to 0.602924 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602924 to 0.602924 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602924 to 0.602924 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] best model from 0.602924 to 0.602924 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] best model from 0.602924 to 0.602924 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 14 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.3383
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0086
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603642 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603642 to 0.602990 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602990 to 0.602941 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602941 to 0.602928 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602928 to 0.602928 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602928 to 0.602928 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] best model from 0.602928 to 0.602928 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] best model from 0.602928 to 0.602928 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 13 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.2702
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0091
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646182 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646182 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608800 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608800 to 0.603642 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603642 to 0.602991 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602991 to 0.602943 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602943 to 0.602932 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602932 to 0.602931 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602931 to 0.602931 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] best model from 0.602931 to 0.602931 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] best model from 0.602931 to 0.602931 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] best model from 0.602931 to 0.602931 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 14 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.2066
+===== IRLS L2 ====
+Max Iteration:	50
+Early Stopping:	10
+lambda:	0.0096
+
+[ 0/50] best model from 99999.000000 to 0.669463 
+ | trainLoss 0.6931   trainAcc 0.7592   valLoss 0.6695   valAcc 0.8453
+[ 1/50] best model from 0.669463 to 0.646183 
+ | trainLoss 0.6696   trainAcc 0.8453   valLoss 0.6462   valAcc 0.8482
+[ 2/50] best model from 0.646183 to 0.623536 
+ | trainLoss 0.6464   trainAcc 0.8482   valLoss 0.6235   valAcc 0.8494
+[ 3/50] best model from 0.623536 to 0.608801 
+ | trainLoss 0.6239   trainAcc 0.8495   valLoss 0.6088   valAcc 0.8496
+[ 4/50] best model from 0.608801 to 0.603643 
+ | trainLoss 0.6092   trainAcc 0.8493   valLoss 0.6036   valAcc 0.8499
+[ 5/50] best model from 0.603643 to 0.602993 
+ | trainLoss 0.6041   trainAcc 0.8491   valLoss 0.6030   valAcc 0.8499
+[ 6/50] best model from 0.602993 to 0.602946 
+ | trainLoss 0.6035   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 7/50] best model from 0.602946 to 0.602936 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 8/50] best model from 0.602936 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 9/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 10/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 11/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 12/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 13/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 14/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 15/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 16/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 17/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 18/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 19/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 20/50] best model from 0.602935 to 0.602935 
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 21/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 22/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 23/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 24/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+[ 25/50] model is not improved
+ | trainLoss 0.6034   trainAcc 0.8491   valLoss 0.6029   valAcc 0.8499
+Stoped by earlystoping, best model loss: 0.6029 in Iteration 16 
+
+ Testing IRLS L2 Loading Best model...
+ * testACC: 0.8499  - testAUC: 0.9016 - testAP: 0.7451 - testF1: 0.6531 - testPrecision: 0.7194 - testRecall: 0.5980 - L2norm: 10.1467

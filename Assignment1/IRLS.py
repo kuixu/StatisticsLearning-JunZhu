@@ -230,9 +230,4 @@ if __name__ == '__main__':
     trainHistoryL2=train(x_train, y_train,x_test,y_test,regularizer="L2",w_lambda= 0.3)
     test(x_test,y_test,regularizer="L2")
 
-#plt.plot(range(trainloss), trainloss, 'k-')
 
-
-
-#plt.plot(xx, yy, 'k-')
-#plt.show()
