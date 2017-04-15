@@ -43,15 +43,41 @@
 }
 
 %%%%%%
-\title{Assignment 1 for \#70240413 \\ "Statistical Machine Learning" }
+\title{Proposal for Youtube-8M Video Classification }
 \author{Kui XU, 2016311209}
-\date{2017/03/23}
+\date{2017/04/15}
 
 \begin{document}
 
 \maketitle
 
-\section{Mathematics Basics}
+\section{Deep Video}
+
+DeepVideo[1] is a set of two branch deep convolutional neural network aming at fusing time infomation on the Sport-1M dataset. DeepVideo proposed four models via, Single Frame network, Late Fusion network, Early Fusion network, Slow Fusion network. Each network is consist of convolutional, normalization and pooling layers. The single frame network architecture is just like AlexNet[2] which won the best prize in Imagenet 2012 changellage. The early fusion network is showed as Figure \ref{deepvideo}, it inputs severval(with number $T$) contiguous frames instead of only one frame in the single frame network. $T$ is some temporal extent. The early fusion is said to be have the ability to detect local motion direction and speed. 
+The Slow Fusion network is designed to balance the mix between the early and late fusion network, so that it can combine the information in both spatial and temporal dimensions.\\
+$\qquad$  Another contribution of DeepVideo is the multiresolution architecture which is a two branch network to correct the bias of the cameras that often focus on the center region. And results show that the Single Frame model with multiresolution achives the best performance on Clip top 1 metric, and the average of Single Frame and three fusion model achives the best performance on both Video top 1 and top 5 metrics. 
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=12cm]{deepvideo.jpg}
+\end{center}
+\caption{Four model architectures of DeepVideo.}\label{deepvideo}
+\end{figure}
+
+DBoF[3] is a network consists of $k$ sparse codes, a max pooling, a fully connected layer and a softmax classifier. Figure \ref{dbof} shows the network architecture. The sparse codes try to learn a bag of frame though projecting the video frame($N$ dimention) onto a higher($N$ dimention, $M \ge N$) and sparse dimentional space. The new $M$-dimensions of features which are trained in the sparse codes network could be seen as $M$ discriminative groups which is easy to classify. DBoF selects $k$ random frame level features from a video, and input them into $k$ shared parameters sparse codes, and then trained using SGD with AdaGrad. The results show that DBoF achives the best performance on mAP metrics with the Frame level features input. 
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=6cm]{DBoF.jpg}
+\end{center}
+\caption{The network architecture of DBoF.}\label{dbof}
+\end{figure}
+
+
+\begin{enumerate}
+  \item[[1]]
+  \item[[2]] A. Krizhevsky, I. Sutskever, and G. Hinton. Imagenet clas- sification with deep convolutional neural networks. In NIPS, 2012.
+  \item[[3]] DBoF
+\end{enumerate}
+
 
 Choose one problem from the 1.1 and 1.2. A bonus would be given if you finished the both.
 
@@ -573,49 +599,9 @@ $\qquad$ I test a set of $\lambda \in (1e-06,3)$ on the training set("UCI a9a/a9
 $\qquad$ From equation44, we know when $\lambda=0$, the algorithm is IRLS without L2 normalization, when $\lambda>0$, the algorithm is IRLS with L2 normalization. \\
 $\qquad$ In my implementation, A very samll value 1e-09 is added into when calculating the inverse of a matrix to avoid inversing a singularity matrix(maybe it is the data that makes a singularity matrix), so in a broad sense, my implementation of IRLS is always a L2 normalized IRLS. But in a narrow sense, as long as the $\lambda to 0$, the algorithm is IRLS without L2 normalization.
 
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=16cm]{../model/lambda_iter.png}
-\end{center}
-\caption{Convergence Iteration with a set of $\lambda$ on a9a with IRLS(L2).}\label{lambda_iter}
-\end{figure}
-Figure \ref{lambda_iter} shows the Convergence Iteration of a set of $\lambda$.  So the We can see that, when $\lambda \approx 0$, the convergence iteration is more than 20 times, when $\lambda \ge 0.1$, the convergence iteration is about 10 times, it shows that the L2 normalized IRLS has a fast convergence speed than IRLS. 
 
 
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=16cm]{../model/lambda_acc.png}
-\end{center}
-\caption{Test Accuracy with a set of $\lambda$ on a9a with IRLS(L2).}\label{lambda_acc}
-\end{figure}
-
-Figure \ref{lambda_acc} shows the Test Accuracy of a set of $\lambda$.  So the We can see that, when $\lambda \approx 0$, the convergence iteration is more than 20 times, when $\lambda \ge 0.1$, the convergence iteration is about 10 times, it shows that the L2 normalized IRLS has a fast convergence speed than IRLS. 
-
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=16cm]{../model/lambda_l2norm.png}
-\end{center}
-\caption{The L2 norm value of $W$ with a set of $\lambda$ on a9a.}\label{lambda_l2norm}
-\end{figure}
-
-Figure \ref{lambda_l2norm} shows the L2 norm value of $W$ with a set of $\lambda$.  The $W$ is decreased when $\lambda$ is larger. 
-
-
-%[!htbp]
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=16cm]{../model/IRLS.png}
-\end{center}
-\caption{Training performance with IRLS on "UCI a9a" dataset.}\label{IRLS}
-\end{figure}
-Figure \ref{IRLS} shows the loss and the accuracy curve by IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 25, and the loss ($J(W)$) is 0.6018, $\Vert W \Vert_2^2$ is 38.5209, the best test accuracy is 0.8499, the AUC is 0.9014. 
-
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=16cm]{../model/IRLS_L2_w_0.3.png}
-\end{center}
-\caption{Training performance with L2 normalized IRLS on "UCI a9a" dataset.}\label{IRLS_L2}
-\end{figure}
+Figure \ref{lambda_acc} shows the Test Accuracy of a set of $\lambda$.  So the We can see that, when $\lambda \approx 0$, the convergence iteration is more than 20 times, when $\lambda \ge 0.1$, the convergence iteration is about 10 times, it shows that the L2 normalized IRLS 
 
 Figure \ref{IRLS_L2} shows the loss and the accuracy curve by L2 normalized IRLS with the earlystoping on "UCI a9a" dataset.  The best model (validation loss is minimum ) is at iteration 9, and the loss ($J(W)$) is 0.6033, $\Vert W \Vert_2^2$ is 7.1097, the best test accuracy is 0.8499, the AUC is 0.9020. 
 
