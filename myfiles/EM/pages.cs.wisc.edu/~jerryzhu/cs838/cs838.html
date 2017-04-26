@@ -1,0 +1,731 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="a">
+   <meta name="GENERATOR" content="Mozilla/4.8 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>cs838 spring 2007</title>
+</head>
+<body background="cs838.jpg" nosave>
+
+<center>
+<h2>
+CS 838-1: Advanced Natural Language Processing</h2></center>
+
+<center>
+<h3>
+Spring 2007</h3></center>
+This course has two themes: applications in natural language processing,
+and statistical machine learning methods.&nbsp;&nbsp; The applications
+include text categorization, document summarization, sentiment analysis,
+word sense disambiguation, machine translating, speech recognition, while
+techniques include basic information theory and probabilistic modeling,
+Expectation-Maximization, Support Vector Machines, probabilistic Context
+Free Grammars, Hidden Markov Models, Conditional Random Fields, latent
+Dirichlet allocation, graphical models (Markov Chain Monte Carlo and variational
+inference), link analysis, and semi-supervised learning.&nbsp; The learning
+methods are also applicable to bioinformatics, computer vision, computer
+code analysis, and other fields. This course counts as core AI credit.
+<h3>
+Schedule</h3>
+
+<center><table WIDTH="90%" >
+<tr>
+<td>Lecture:</td>
+
+<td>11:00am-12:15pm TR, CS 1325</td>
+</tr>
+
+<tr>
+<td>Office hour:</td>
+
+<td>Thursday 3pm-4pm, CS 4369</td>
+</tr>
+
+<tr>
+<td>Class mailing list:</td>
+
+<td>compsci838-1-s07@lists.wisc.edu (<a href="https://www-auth.cs.wisc.edu/lists/classes/compsci838-1-s07/">archive</a>)</td>
+</tr>
+
+<tr>
+<td>Email the instructor:</td>
+
+<td><a href="mailto:jerryzhu@cs.wisc.edu">jerryzhu@cs.wisc.edu</a></td>
+</tr>
+
+<tr>
+<td>Teaching assistant:</td>
+
+<td>Chi-Man Liu, <a href="mailto:cx@cs.wisc.edu">cx@cs.wisc.edu</a></td>
+</tr>
+</table></center>
+
+<h3>
+Instructor: <a href="http://www.cs.wisc.edu/~jerryzhu">Xiaojin (Jerry)
+Zhu</a></h3>
+Please feel free to send me email, I usually respond quickly.
+<h3>
+Course Outline and Readings</h3>
+The order and exact content are subject to change.
+<ul>
+<li>
+Review of mathematical background</li>
+
+<ul>
+<li>
+[cB] (see 'Books' below) 1.2, Appendix B, C, E</li>
+
+<li>
+[dM] 2 or [MS] 2.1</li>
+
+<li>
+Iain Murray's excellent <a href="http://www.gatsby.ucl.ac.uk/%7Eiam23/pub/cribsheet.pdf">crib
+sheet</a>.</li>
+</ul>
+
+<li>
+Statistics of the English language</li>
+
+<ul>
+<li>
+[MS] 4.2, 1.4.2, 1.4.3</li>
+
+<li>
+<a href="http://myhome.hanafos.com/%7Ephiloint/phd-data/Zipf%27s-Law-2.htm">Zipf's
+law</a>, <a href="http://www.nslij-genetics.org/wli/zipf/">literature</a></li>
+
+<li>
+Wentian Li, <a href="http://www.nslij-genetics.org/wli/pub/complexity96_lett_pre.pdf">Comments
+to "Bell Curves and Monkey Languages"</a>, 1996</li>
+
+<li>
+Wentian Li. Random texts exhibit Zipf's-law-like word frequency distribution.
+IEEE Transactions on Information Theory, 38(6), 1842-1845, 1992</li>
+
+<li>
+Saffran, J. R., Aslin, R. N., &amp; Newport, E. L. (1996). Statistical
+learning by 8-month-old infants. Science, 274, 1926-1928.</li>
+
+<li>
+Lillian Lee.  <a href="http://www.cs.cornell.edu/home/llee/papers/cstb.home.html">"I'm sorry Dave, I'm afraid I can't do that": Linguistics, Statistics, and Natural Language Processing circa 2001.</a>
+Computer Science: Reflections on the Field, Reflections from the Field, pp. 111--118, 2004. 
+</li>
+</ul>
+
+<li>
+Language modeling, smoothing</li>
+
+<ul>
+
+<li> [cB] 2.1, 2.2 </li>
+
+<li>
+[MS] 6 or [JM] 6</li>
+
+<li>
+Stanley F. Chen and Joshua Goodman,&nbsp; <a href="http://www.cs.cmu.edu/%7Esfc/papers/h015a-techreport.ps.gz">An
+empirical study of smoothing techniques for language modeling</a> TR-10-98,
+Computer Science Group, Harvard University, 1998</li>
+
+<li>
+Ronald Rosenfeld. <a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/roni/WWW/papers/survey-slm-IEEE-PROC-0004.pdf">Two
+decades of Statistical Language Modeling: Where Do We Go From Here? </a>Proceedings
+of the IEEE, 88(8), 2000.</li>
+
+<li>
+<a href="http://www.inference.phy.cam.ac.uk/mackay/lang4.pdf">A Hierarchical
+Dirichlet Language Model</a> David MacKay, Linda Peto. 1994</li>
+
+<li>
+<a href="http://mi.eng.cam.ac.uk/%7Eprc14/toolkit.html">The CMU-Cambridge
+Statistical Language Modeling toolkit</a> v2</li>
+</ul>
+
+<li>
+The entropy of a language, information theory</li>
+
+<ul>
+<li> [cB] 1.6, including a nice introduction to differential entropy</li>
+<li> [MS] 2.2 or [JM] 6.7</li>
+
+<li>
+<a href="http://acl.ldc.upenn.edu/J/J92/J92-1002.pdf">An estimate of an
+upper bound for the entropy of English</a>. Brown, Della Pietra, Mercer,
+Della Pietra, Lai. Computational Linguistics, 18(1), pp31-40, 1992</li>
+
+<li>
+Claude Shannon: <a href="http://cm.bell-labs.com/cm/ms/what/shannonday/paper.html">A
+mathematical theory of communication</a></li>
+
+<li>
+<a href="http://www.amazon.com/gp/product/0471062596/002-2556065-8665602?v=glance&n=283155">Elements
+of information theory</a>. Thomas Cover and Joy Thomas, ISBN 0471062596</li>
+</ul>
+
+<li>
+Information retrieval and link analysis</li>
+
+<ul>
+<li>
+John Lafferty and Chengxiang Zhai, <a href="http://www.cs.cmu.edu/~lafferty/pub/dq.ps">Probabilistic
+relevance models based on document and query generation</a>, In Language
+Modeling and Information Retrieval, Kluwer International Series on Information
+Retrieval, Vol. 13, 2003.</li>
+
+<li>
+ChengXiang Zhai, John Lafferty, <a href="http://www.cs.cmu.edu/~lafferty/pub/smooth-tois.ps">A
+study of smoothing methods for language models applied to information retrieval</a>,
+ACM Transactions on Information Systems, Vol. 2, No. 2, April 2004.</li>
+
+<li>
+[MS] 15</li>
+
+<li>
+the <a href="http://www.lemurproject.org/">Lemur toolkit</a></li>
+
+<li>
+<a href="http://dbpubs.stanford.edu:8090/pub/1999-66">The PageRank Citation
+Ranking: Bringing Order to the Web</a>. Lawrence Page and Sergey Brin and
+Rajeev Motwani and Terry Winograd. Stanford Digital Library Technologies
+Project. 1998</li>
+
+<li>
+Jon M. Kleinberg. <a href="http://www.cs.cornell.edu/home/kleinber/auth.pdf">Authoritative
+sources in a hyperlinked environment</a>.&nbsp; Journal of the ACM, 46(5),
+604--632, 1999</li>
+</ul>
+
+<li>Document summarization</li>
+<ul>
+<li> P. Turney. Learning to extract keyphrases from text. Technical report, National Research Council, Institute for Information Technology, 1999. </li>
+<li> A. Hulth. Improved automatic keyword extraction given more linguistic knowledge. In Proc.  Conf. Empirical Methods in Natural Language Processing, 2003. </li>
+<li> R. Mihalcea and P. Tarau. TextRank: Bringing order into texts. In Proc. Conf. Empirical Methods in Natural Language Processing, 2004.</li>
+<li> G. Erkan and D. Radev. 2004. LexRank: Graph-based centrality as salience in text summarization.  Journal of Artificial Intelligence Research. </li>
+<li> X. Zhu, A. Goldberg, J. Van Gael and D. Andrzejewski.  
+<a href="http://www.cs.wisc.edu/~jerryzhu/pub/grasshopper.pdf">Improving Diversity in Ranking using Absorbing Random Walks</a>.  NAACL-HLT, 2007. </li>
+</ul>
+
+<li>
+Text categorization: Naive Bayes, logistic regression</li>
+
+<ul>
+
+<li> [cB] 8.1, 8.2 for Naive Bayes; 4.3 for logistic regression.</li>
+
+<li>
+<a href="http://www.cs.umass.edu/%7Emccallum/papers/multinomial-aaai98w.ps">A
+Comparison of Event Models for Naive Bayes Text Classification</a>. Andrew
+McCallum and Kamal Nigam. AAAI-98 Workshop on "Learning for Text Categorization".</li>
+
+<li>
+Andrew McCallum's <a href="http://www.cs.umass.edu/%7Emccallum/bow/rainbow/">rainbow
+statistical text classification code</a></li>
+
+<li>
+Adam Berger, Stephen Della Pietra, and Vincent Della Pietra, 1996. <a href="http://www.cs.cmu.edu/afs/cs/user/aberger/www/ps/compling.ps">A
+maximum entropy approach to natural language processing </a>. <i>Computational
+Linguistics</i> 22(1).</li>
+
+<li>
+Ronald Rosenfeld. <a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/roni/WWW/papers/me-csl-revised.pdf">A
+Maximum Entropy Approach to Adaptive Statistical Language Modeling</a>.
+Computer, Speech and Language 10, 187--228, 1996</li>
+
+<li>
+Stanley Chen and Ronald Rosenfeld. <a href="http://www.cs.cmu.edu/~roni/papers/wsme-sampling-icassp-9903.pdf">Efficient
+Sampling and Feature Selection in Whole Sentence Maximum Entropy Language
+Models</a>. In Proc. ICASSP '99, Phoenix, Arizona, March 1999.</li>
+
+<li>
+Zhang Le's <a href="http://homepages.inf.ed.ac.uk/s0450736/maxent.html">MaxEnt
+page</a></li>
+
+<li>
+Y. Dan Rubenstein and Trevor Hastie, 1997. <a href="http://www-stat.stanford.edu/%7Ehastie/Papers/kdd97.ps">Discriminative
+vs Informative Learning</a>. <i>Proc. of KDD</i>.</li>
+
+<li>
+Andrew Y. Ng and Michael Jordan, 2002. <a href="http://ai.stanford.edu/%7Eang/papers/nips01-discriminativegenerative.pdf">On
+discriminative vs. generative classifiers: A comparison of logistic regression
+and Naive Bayes</a>. <i>Proc. of NIPS</i>.</li>
+</ul>
+
+<li>
+Sentiment, humor, gender analysis with Support Vector Machines</li>
+
+<ul>
+
+<li> [cB] 7.1 </li>
+
+<li> Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan. 
+<a href="http://www.cs.cornell.edu/home/llee/papers/sentiment.pdf">Thumbs up? Sentiment Classification using Machine Learning Techniques</a>.
+<i>EMNLP</i>, 2002.
+</li>
+
+
+<li> Rada Mihalcea and Carlo Strapparava. 
+<a href="http://www.cs.unt.edu/~rada/papers/mihalcea.emnlp05b.pdf">Making Computers Laugh: Investigations in Automatic Humor Recognition</a>. 
+<i>EMNLP</i>, 2005.
+</li>
+
+<li> Moshe Koppel, Shlomo Argamon, Anat Rachel Shimoni.
+<a href="http://www.cs.biu.ac.il/~koppel/papers/male-female-llc-final.ps">
+Automatically Categorizing Written Texts by Author Gender</a>.
+<i>Literary and Linguistic Computing 17(4)</i>, November 2002, pp. 401-412. 
+</li>
+
+<li>
+Chris Burges. <a href="http://www.kernel-machines.org/papers/Burges98.ps.gz">A
+Tutorial on Support Vector Machines for Pattern Recognition</a>. <i>Knowledge
+Discovery and Data Mining</i>, 2(2), 1998.</li>
+
+<li>
+Alex J. Smola and Bernhard Scholkopf. <a href="http://eprints.pascal-network.org/archive/00002057/01/SmoSch03b.pdf">A
+Tutorial on Support Vector Regression</a>, NeuroCOLT Technical Report TR-98-030.
+1998</li>
+
+<li>
+Thorsten Joachims' <a href="http://svmlight.joachims.org/">SVM-light code</a></li>
+</ul>
+
+<li>
+Word sense disambiguation: unlabeled text as knowledge source</li>
+
+<ul>
+
+<li> [cB] 9 for the EM algorithm.</li>
+
+<li>
+Self-training for word sense disambiguation: David Yarowsky, 1995. <a href="http://www.cs.jhu.edu/%7Eyarowsky/acl95.ps">Unsupervised
+word sense disambiguation rivaling supervised methods</a>, <i>Proceedings
+of the 33rd Annual Meeting of the Association for Computational Linguistics</i>,
+pp 189--196.</li>
+
+<li>
+<a href="http://www.cs.umass.edu/~mccallum/papers/emcat-mlj2000.ps">Text
+Classification from Labeled and Unlabeled Documents using EM</a>. Kamal
+Nigam, Andrew McCallum, Sebastian Thrun and Tom Mitchell. Machine Learning,
+39(2/3). pp. 103-134. 2000.</li>
+
+<li>
+<a href="http://www.cs.cmu.edu/~avrim/Papers/cotrain.ps">Combining Labeled
+and Unlabeled Data with Co-Training</a>. Avrim Blum and Tom Mitchell. Proceedings
+of the 11th Annual Conference on Computational Learning Theory, pages 92--100,
+1998</li>
+
+<li>
+T. Joachims, <a href="http://www.cs.cornell.edu/People/tj/publications/joachims_99c.pdf">Transductive
+Inference for Text Classification using Support Vector Machines</a>. Proceedings
+of the International Conference on Machine Learning (ICML), 1999.</li>
+
+<li>
+<a href="http://www.cs.wisc.edu/~jerryzhu/pub/zgl.pdf">Semi-Supervised
+Learning Using Gaussian Fields and Harmonic Functions</a>.&nbsp; Xiaojin
+Zhu, Zoubin Ghahramani, John Lafferty.&nbsp; The Twentieth International
+Conference on Machine Learning (ICML-2003)</li>
+
+<li>
+<a href="http://www.cs.wisc.edu/~jerryzhu/pub/ssl_survey.pdf">Semi-Supervised
+Learning Literature Survey</a>. Xiaojin Zhu, Computer Sciences TR 1530,
+University of Wisconsin - Madison.</li>
+</ul>
+
+<li>
+Semantic space via probabilistic Latent Semantic Analysis, latent Dirichlet
+allocation</li>
+
+<ul>
+<li>
+&nbsp;<a href="http://www.cs.brown.edu/~th/papers/Hofmann-UAI99.pdf">Probabilistic
+Latent Semantic Analysis</a>. Thomas Hofmann. Proceedings of the Fifteenth
+Conference on Uncertainty in Artificial Intelligence (UAI'99)</li>
+
+<li>
+&nbsp;<a href="http://www.cs.brown.edu/~th/papers/Hofmann-SIGIR99.pdf">Probabilistic
+Latent Semantic Indexing</a>. Thomas Hofmann. Proceedings of the 22nd International
+Conference on Research and Development in Information Retrieval (SIGIR'99)</li>
+
+<li>
+D. Blei, A. Ng, and M. Jordan. <a href="http://www.cs.princeton.edu/~blei/papers/BleiNgJordan2003.pdf">Latent
+Dirichlet allocation</a>. Journal of Machine Learning Research, 3:993–1022,
+January 2003.</li>
+
+<li>
+Griffiths, T., & Steyvers, M. <a href="http://psiexp.ss.uci.edu/research/papers/sciencetopics.pdf">Finding Scientific Topics.</a>. 
+Proceedings of the National Academy of Sciences, 101 (suppl. 1), 5228-5235. 2004 </li>
+
+<li>
+<a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA code</a></li>
+</ul>
+
+<li>
+Part of Speech tagging with Hidden Markov Models</li>
+
+<ul>
+<li>[MS] 10 for POS tagging </li>
+
+<li>[cB] 13.2, [MS] 9, or [JM] 7.1-7.4 for HMM</li>
+
+<li>
+Lawrence R. Rabiner, 1989. <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">A
+tutorial on hidden Markov models and selected applications in speech recognition</a>,
+Proceedings of the IEEE 77(2),&nbsp;&nbsp;&nbsp;&nbsp; pp. 257-286. (<a href="http://xenia.media.mit.edu/~rahimi/rabiner/rabiner-errata/rabiner-errata.html">An
+Erratum</a> by Ali Rahimi)</li>
+
+<li>
+David Elworthy, 1994. <a href="http://arxiv.org/pdf/cmp-lg/9410012">Does
+Baum-Welch Re-estimation help taggers?</a> Proceedings of the 4th Conference
+on Applied Natural Language Processing.</li>
+
+<li>
+Kevin Murphy's <a href="http://www.cs.ubc.ca/~murphyk/Software/HMM/hmm.html">Hidden
+Markov Model (HMM) Toolbox</a> for Matlab</li>
+</ul>
+
+<li>
+Information extraction with Conditional Random Fields</li>
+
+<ul>
+<li>
+John Lafferty, Andrew McCallum, Fernando Pereira. <a href="http://www.cs.cmu.edu/~lafferty/pub/crf.ps">Conditional
+Random Fields: Probabilistic Models for Segmenting and Labeling Sequence
+Data.</a> In Proceedings of the Eighteenth International Conference on
+Machine Learning (ICML-2001), 2001.</li>
+
+<li>
+Charles Sutton and Andrew McCallum. <a href="http://www.cs.umass.edu/~mccallum/papers/crf-tutorial.pdf">An
+Introduction to Conditional Random Fields for Relational Learning.
+</a>In
+Introduction to Statistical Relational Learning. Edited by Lise Getoor
+and Ben Taskar. MIT Press. 2006.</li>
+
+<li>
+Hanna Wallach's <a href="http://www.inference.phy.cam.ac.uk/hmw26/crf/">conditional
+random fields</a> page</li>
+
+<li>
+Andrew McCallum's <a href="http://mallet.cs.umass.edu/">MALLET</a> code</li>
+</ul>
+
+<li>
+Parsing and context free grammars</li>
+
+<ul>
+<li>
+[MS] 11 or [JM] 9, 12</li>
+
+<li>
+Detlef Prescher. <a href="http://staff.science.uva.nl/~prescher/papers/bib/2003em.prescher.pdf">A
+Tutorial on the Expectation-Maximization Algorithm Including Maximum-Likelihood
+Estimation and EM Training of Probabilistic Context-Free Grammars</a>.
+The 15th European Summer School in Logic, Language and Information (ESSLLI-03).</li>
+</ul>
+
+<li>
+Machine Translation</li>
+
+<ul>
+<li>
+Adam L. Berger, Peter F. Brown, Stephen A. Della Pietra, Vincent J. Della
+Pietra, John R. Gillett, John D. Lafferty, Robert L.&nbsp; Mercer, Harry
+Printz, and Lubos Ures, 1994. <a href="http://www.cs.cmu.edu/afs/cs/user/aberger/www/ps/candide.ps">The
+Candide System for Machine Translation</a>. Proceedings of the 1994 ARPA
+Workshop on Human Language Technology</li>
+
+<li>
+Peter F. Brown, Stephen A. Della Pietra, Vincent J. Della Pietra, and Robert
+L. Mercer, 1993. <a href="http://www.clsp.jhu.edu/ws99/projects/mt/ibm-paper.ps">The
+Mathematics of Statistical Machine Translation</a>. Computational Linguistics
+19(2), pp. 263--311.</li>
+
+<li>
+Papineni, Roukos, Ward, Zhu. <a href="http://acl.ldc.upenn.edu/P/P02/P02-1040.pdf">Bleu:
+a Method for Automatic Evaluation of Machine Translation</a>. Proceedings
+of the 40th Annual Meeting of the Association for Computational Linguistics
+(ACL), Philadelphia, July 2002, pp. 311-318.</li>
+</ul>
+</ul>
+
+<h3>
+Lecture notes</h3>
+
+<table>
+<tr>
+(the week of)</tr>
+
+<tr>
+<td>Jan 23</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/background.pdf">mathematical background</a></td>
+</tr>
+
+<tr>
+<td>Jan 30</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/words.pdf">words, zipf's law, miller's monkey</a></td>
+</tr>
+
+<tr>
+<td>Feb 6</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/LM.pdf">language modeling</a></td>
+</tr>
+
+<tr>
+<td>Feb 13</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/info.pdf">information theory</a>,
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/IR.pdf">information retrieval</a>
+</td>
+</tr>
+
+<tr>
+<td>Feb 20</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/link.pdf">link analysis</a></td>
+</tr>
+
+<tr>
+<td>Feb 27</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/NB.pdf">naive Bayes</a>,
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/LR.pdf">logistic regression</a></td>
+</tr>
+
+<tr>
+<td>March 6</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/EM.pdf">the EM algorithm</a></td>
+</tr>
+
+<tr>
+<td>March 20</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/SVM.pdf">SVMs</a>,
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/summarization.pdf">text summarization (Andrew Goldberg)</a></td>
+</tr>
+
+<tr>
+<td>March 27</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/pLSA.pdf">latent topic models</a></td>
+</tr>
+
+<tr>
+<td>April 3</td>
+<td>spring break, no class</td>
+</tr>
+
+<tr>
+<td>April 10</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/HMM.pdf">hidden Markov models</a></td>
+</tr>
+
+<tr>
+<td>April 17, 24</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/BP.pdf">inference in graphical models</a></td>
+</tr>
+
+<tr>
+<td>May 1</td>
+<td><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/CRF.pdf">conditional random fields</a></td>
+</tr>
+
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+</table>
+
+<h3>
+References</h3>
+
+<h4>
+Books</h4>
+
+<ul>
+<li>
+<b>Text book</b>: [cB] Christopher M. Bishop, <a href="http://research.microsoft.com/~cmbishop/PRML/">Pattern
+Recognition and Machine Learning</a>. Springer Verlag, 2006.</li>
+
+<li>
+[MS] Manning &amp; Schutze, <a href="http://nlp.stanford.edu/fsnlp/">Foundations
+of statistical natural language processing</a>, the MIT press, 1999.</li>
+
+<li>
+[JM] Jurafsky &amp; Martin, <a href="http://www.cs.colorado.edu/~martin/slp.html">Speech
+and language processing</a>, Prentice Hall, 2000.</li>
+
+<li>
+[dM] David MacKay. <a href="http://www.inference.phy.cam.ac.uk/mackay/itprnn/book.html">Information
+Theory, Inference, and Learning Algorithms</a>. Cambridge University Press,
+2002.</li>
+</ul>
+
+<h4>
+Courses</h4>
+
+<ul>
+<li>
+<a href="http://www.cs.cmu.edu/%7Eroni/11761-s05/">language and statistics</a>,
+Rosenfeld, CMU</li>
+
+<li>
+<a href="http://hartford.lti.cs.cmu.edu/classes/11-682/">human language
+technologies</a>, Callan, Black, Lavie, CMU</li>
+
+<li>
+<a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/project/cmt-55/lti/Courses/711/www/index.html">algorithms
+for NLP</a>, Lavie, Frederking, CMU</li>
+
+<li>
+<a href="http://penance.is.cs.cmu.edu/11-751/">speech recognition and understanding</a>,
+Schultz, Waibel, CMU</li>
+
+<li>
+<a href="http://nyc.lti.cs.cmu.edu/classes/11-741/index.html">information
+retrieval</a>, Callan, Yang, CMU</li>
+
+<li>
+<a href="http://hartford.lti.cs.cmu.edu/classes/95-779/">text data mining</a>,
+Callan, CMU</li>
+
+<li>
+<a href="http://www.cs.cmu.edu/%7Ewcohen/10-707/">learning to turn words
+into data</a>, Cohen, CMU</li>
+
+<li>
+<a href="http://www.biostat.wisc.edu/%7Ecraven/cs838-f00.html">machine
+learning for text analysis</a>, Craven, Shavlik, U Wisconsin</li>
+
+<li>
+<a href="http://www.cs.umass.edu/%7Emccallum/courses/inlp2004/">introduction
+to natural language processing</a>, McCallum, U Mass</li>
+
+<li>
+<a href="http://ttic.uchicago.edu/%7Edmcallester/">statistical methods
+for artificial intelligence</a>, McAllester, TTI-C</li>
+
+<li>
+<a href="http://www.cs.cornell.edu/courses/cs775/2001sp/default.html">statistical
+natural language processing: models and methods</a>, Lee, Cornell</li>
+
+<li>
+<a href="http://www.cs.cornell.edu/courses/cs674/2002SP/">natural language
+processing</a>, Lee, Cornell</li>
+
+<li>
+<a href="http://www.cs.cornell.edu/courses/cs674/2005sp/">natural language
+processing</a>, Cardie, Cornell</li>
+
+<li>
+<a href="http://www.cs.cmu.edu/%7E10702/">statistical foundations of machine
+learning</a>, Lafferty, Wasserman, CMU</li>
+
+<li>
+<a href="http://www.inf.ed.ac.uk/teaching/courses/emnlp/">Empirical Methods
+in Natural Language Processing</a>, Koehn, Edinburgh</li>
+
+<li>
+<a href="http://www.cse.unt.edu/~rada/CSCE5290/">
+Natural Language Processing</a>, Mihalcea, University of North Texas</li>
+
+<li>
+<a href="http://faculty.cs.byu.edu/~ringger/CS601R/"> Topics in Natural Language Processing</a>, Ringger, BYU</li>
+
+<li>
+<a href="http://www.biostat.wisc.edu/bmi576/">introduction to bioinformatics</a>,
+Craven, U Wisconsin</li>
+
+<li>
+<a href="http://www.biostat.wisc.edu/bmi776/">advanced bioinformatics</a>,
+Craven, U Wisconsin</li>
+
+<li>
+<a href="http://www.cs.wisc.edu/%7Eshavlik/cs760.html">machine learning</a>,
+Shavlik, U Wisconsin</li>
+
+<li>
+<a href="http://www.cs.wisc.edu/%7Edpage/cs731/">advanced methods in artificial
+intelligence</a>, Page, U Wisconsin</li>
+</ul>
+
+<h3>
+Grading</h3>
+
+<ul>
+<li>
+Homework 35%.</li>
+
+<ul>
+<li><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw1.pdf">Homework 1: Words</a>. Due 2/13/07 before class.
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw1soln.pdf">(solution).
+</li>
+
+<li><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw2.pdf">Homework 2: Language models and information theory</a>. Due 2/27/07 before class.
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw2soln.pdf">(solution).
+</li>
+
+<li><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw3.pdf">Homework 3: Information retrieval and link analysis</a>. Due 3/13/07 before class.
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw3soln.pdf">(solution).
+</li>
+
+<li><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw4.pdf">Homework 4: Naive Bayes</a>. Due 3/27/07 before class.
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw4soln.pdf">(solution).
+</li>
+
+<li><a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw5.pdf">Homework 5: Support Vector Machines</a>. Due 4/10/07 before class. (EXTENDED: Due 4/12/07 before class)
+<a href="http://www.cs.wisc.edu/~jerryzhu/cs838/hw5soln.pdf">(solution)</a>.
+</li>
+
+</ul>
+
+<li>
+Exam 30%.</li>
+
+<li>
+Project 30%.</li>
+This year we will allow several types of projects:
+<ul>
+<li>
+Completely open.  If you have an idea on an interesting project, please
+send me email / talk to me.  Last year's projects can be found <a href="http://www.cs.wisc.edu/~apirak/cs/cs838/presentPage.html">here</a> for your
+reference.
+</li>
+
+<li> Semi-open.  Consider the Web contents of all users in our department. 
+These can be easily obtained (if you have an CS account) in each user's
+~/public/html directory.  Do something interesting and creative to it.
+</li>
+
+<li> 
+Focused.  I will proposal a few concrete project ideas:  
+<ul>
+<li> Given a researcher's name (e.g., Michael Jordan), find the person's Web
+page, build a statistical profile for the person (e.g., a unigram language
+model from the researcher's publication pdf files).  With many profiles
+from different researchers, we can ask questions like "who is best to ask
+for this question", "who can review this paper", etc.
+</li>
+<li> Paper search.  Given a PDF paper file, identify near-identical papers in a collection of PDF files or online.</li>
+<li> Satire recognition.  For example, distinguish articles from <a href="http://www.theonion.com/">The Onion</a> vs. <a href="http://www.cnn.com">CNN</a>. 
+</li>
+</ul>
+
+</li>
+
+</ul>
+It is OK to work in groups.  But each group member should make clear his/her distinct intellectual contribution.
+
+<li>
+"Quality" class participation 5%.</li>
+</ul>
+
+<h3>
+Quotes</h3>
+"I'm right now working at Google in the Search Quality team.&nbsp; I see
+lot of concepts we covered in CS838 being used here. Thanks again for offering
+the course." 
+-- former student
+<p>
+"The best part of the course was the classes.  Teaching was very good.  Even the very difficult concepts appeared simple."
+-- former student
+<p>
+"Dude, it is big... but lovely."
+-- word samples from a unigram language model trained on movie reviews (punctuations added)
+</body>
+</html>
