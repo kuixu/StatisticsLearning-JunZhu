@@ -1,0 +1,338 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{enumerate}
+%%%%%%
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%%%%%%
+\title{Assignment 2 for \#70240413-0 \\ "Statistical Machine Learning" }
+\author{Kui XU, 2016311209}
+\date{2017/03/23}
+
+\begin{document}
+
+\maketitle
+
+\section{Boosting: from Weak to Strong}
+
+Choose one problem from the 1.1 and 1.2. A bonus would be given if you finished the both.
+
+\subsection{Calculus}
+The gamma function is defined by (assuming x $>$ 0)
+
+\begin{equation}
+\Gamma (x) = \int^{\infty}_{0}{u^{x-1}e^{-u}du.}
+\end{equation}
+
+\begin{enumerate}
+\item[(1)] Prove that $\Gamma (x + 1) =x \Gamma (x)$.
+\item[(2)] Also show that 
+            \begin{equation}
+            \int^{1}_{0}{u^{a-1}{(1-u)}^{b-1}du=\frac{\Gamma(a)\Gamma(b)}{\Gamma (a+b)}.}
+            \end{equation}
+\end{enumerate}
+
+
+\textbf{Solution:} For Question (1), we can prove it by Using integration by parts, the steps are as follows:
+\begin{equation}
+    \begin{aligned}
+        \Gamma(x+1) &= \int_0^\infty u^{x} e^{-u}\,du \\
+                    &= \left[-u^x e^{-u}\right]_0^\infty + \int_0^\infty x u^{x-1} e^{-u}\, du \\
+                    &= \lim_{u\to \infty}(-u^x e^{-u}) - (0 e^{-0}) + x\int_0^\infty u^{x-1} e^{-u}\, du \\
+                    &= x\int_0^\infty u^{x-1} e^{-u}\, du\\
+                    &= x\Gamma(x)
+    \end{aligned}
+\end{equation}
+As we know, when $u\to \infty$, $-u^x e^{-u}\to 0$, so the equation is proved.\\
+
+
+
+\textbf{Solution:} For Question (2), we know that the left of the equation is a Beta function. From the definitions, we can express the equation which we want to prove as : 
+\begin{equation}
+    \Gamma(a + b) B(a, b)= \frac{\Gamma(a)\Gamma(b)}{\Gamma (a+b)}
+\end{equation}
+It's a double integral, the expansion formula is as follows:
+\begin{equation}
+    \begin{aligned}
+        \Gamma(a + b) B(a, b)   &= \int_0^\infty u^{a + b -1} e^{-u} du \int_0^1 v^{a-1} (1 - v)^{b-1} dv \\
+                                &= \int_0^\infty \int_0^1 (u v)^{a-1}[u (1 - v)]^{b-1} u e^{-u} du \, dv \\
+    \end{aligned}
+\end{equation}
+Then we do a transformation $w = u v$, $z = u (1 - v)$. The inverse transformation is $  u= w + z $, $ v = w \big/(w + z) $ ,  the corresponding ranges of them are $w \in (0, \infty)$ and $u \in (0, \infty)$. \\
+The absolute value of the Jacobian is 
+
+\begin{equation}
+    \begin{aligned}
+        \left|\nabla\frac{\partial(u, v)}{\partial(w, z)}\right| = \frac{1}{(w + z)} 
+    \end{aligned}
+\end{equation}
+Next, we use the changed of variables to do a double integral, the equation above becomes:
+\begin{equation}
+    \begin{aligned}
+        &\int_0^\infty \int_0^\infty w^{a-1} z^{b-1} (w + z) e^{-(w + z)} \frac{1}{w + z} dw \, dz \\
+        &= \int_0^\infty \int_0^\infty w^{a-1} z^{b-1} e^{-(w + z)}  dw \, dz \\
+        &= \int_0^\infty w^{a-1}e^{-w} dw  \int_0^\infty z^{b-1} e^{- z} dz \\
+        &= \Gamma(a)\Gamma(b)
+    \end{aligned}
+\end{equation}    
+Finally the equation is proved.
+
+\subsection{Optimization}
+
+Use the Lagrange multiplier method to solve the following problem:
+\begin{equation}
+    \begin{aligned}
+        \min_{x_1, x_2}    \qquad& x_{1}^{2} + x_{2}^{2} - 1 \\
+        s.t.\qquad & x_{1} + x_{2} - 1 =0 \\
+        & 2x_{1} - x_{2} \ge 0
+    \end{aligned}
+\end{equation}    
+
+\textbf{Solution:} Consider the above equation is consist of inequality constraint functions and it is a nonlinear optimization problem, we can use the lagrange multiplier method with KKT condition to solve it. We construct the Lagrangian function for the problem:
+\begin{equation}
+    \mathcal{L}(x,\lambda, \mu) = x_{1}^{2} + x_{2}^{2} - 1 + \lambda \cdot \Big(x_{1} + x_{2} - 1\Big) + \mu \cdot \Big(2x_{1} - x_{2}\Big)
+\end{equation}    
+The certain conditions which are called KKT condition should satisfy,
+
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial(\mathcal{L})}{\partial(X)}\arrowvert_{X} &=0\\
+        \lambda_{j}  \ne 0 \\
+        \mu_{k}  \ge 0\\
+        \mu_{k} \cdot \Big(x_{1}^{*} + x_{2}^{*} - 1\Big) =0\\
+        x_{1}^{*} + x_{2}^{*} - 1 = 0\\
+        2x_{1}^{*}  - x_{2}^{*}  \le 0\\
+    \end{aligned}
+\end{equation}  
+We set up the equations:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(x_1)} &=2 x_1 + \lambda +2 \mu = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(x_2)} &=2 x_2 + \lambda - \mu = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(\lambda)} &= x_1 + x_2 -1  = 0\\
+        \frac{\partial(\mathcal{L},x,\lambda, \mu)}{\partial(\mu)} &= 2 x_1 - x_2 = 0\\
+    \end{aligned}
+\end{equation} 
+
+We solve them: 
+\begin{equation}
+    \begin{aligned}
+        x_1 &= \frac{1}{3}\\
+        x_2 &= \frac{2}{3}\\
+        \lambda &= \frac{2}{9}\\
+        \mu &= -\frac{10}{9}\\
+    \end{aligned}
+\end{equation}  
+
+Choose one problem from the following 1.3 and 1.4. A bonus would be given if
+you finished the both.
+
+\subsection{Stochastic Process}
+We toss a fair coin for a number of times and use H(head) and T(tail) to denote the two sides of the coin. Please compute the expected number of tosses we need to observe a first time occurrence of the following consecutive pattern
+\begin{equation}
+    H,\underbrace{T,T,...,T}_{k}.
+\end{equation}
+
+\textbf{Solution:} we asume that $E$ is the expection of the consecutive pattern $H,\underbrace{T,T,...,T}_{k}$, and $E_{T}^{k}$ is the   expection of $\underbrace{T,T,...,T}_{k}$. Consider an equivalent form of this pattern $H,\underbrace{T,T,...,T}_{k-1},T$, we have 
+\begin{equation}  
+\left\{  
+             \begin{array}{lr}  
+             E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2}E_{T}^{k}, &  \\  
+             E_{T}^{k} = E_{T}^{k-1} + 1 + \dfrac{1}{2}E_{T}^{k} + \dfrac{1}{2} \times 0. &   E_{T}^{1} =2   
+             \end{array}  
+\right.  
+\end{equation}  
+
+which $E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2}E_{T}^{k}$ shows the expection of the first toss. At the first time, you may get $H$ or $T$ with the  $\frac{1}{2}$ probability. If you got $H$, OK, you succuced and then you will try to get $k$ times $T$, the expection will be $\dfrac{1}{2}E_{T}^{k}$; If you got $T$, you fail and will restart to tosses and the expection will be $\dfrac{1}{2}E$. \\
+which $ E_{T}^{k} = E_{T}^{k-1} + 1 + \dfrac{1}{2}E_{T}^{k} + \dfrac{1}{2} \times 0$ shows the the expection of the $k-1$ times of $T$ ($E_{T}^{k-1}$) and the last toss. At the last toss, as for the first time, you will get $H$ or $T$ with the  $\frac{1}{2}$ probability. If you got $H$, you fail and you need to get $k$ times $T$ over again and the expection will be $\dfrac{1}{2}E_{T}^{k}$. If you got $T$, OK, you win the game, the expection will be $\dfrac{1}{2}E_{T}^{k}$; 
+
+Next, we solve the recursive function above
+
+\begin{equation}  
+    E_{T}^{k} = 2^{k+1} -2
+\end{equation} 
+$\Rightarrow$
+
+\begin{equation}  
+    E = 1 + \dfrac{1}{2}E +  \dfrac{1}{2} (2^{k+1} -2)
+\end{equation} 
+$\Rightarrow$
+
+\begin{equation}  
+    E  =  2^{k+1}
+\end{equation} 
+
+So the expected number of tosses is $2^{k+1}$.
+
+
+\subsection{Probability}
+
+Suppose $p \sim Beta(p|\alpha, \beta)$ and $x|p \sim Bernoulli(x|p)$. Show that $p|x \sim Beta(p|\alpha + x, \beta + 1 - x)$, which implies that the Beta distribution can serve as a conjugate prior to the Bernoulli distribution.
+
+\textbf{Solution:} Consider calculating the posterior $p|x$, and we know the likelihood function $x|p$ and the prior $p$, here we use Bayes' theorem:
+\begin{equation}
+    \begin{aligned}
+        P(p | x) &= \frac{P(x|p) P(p)}{P(x)} \\
+                 &= \frac{P(x|p) P(p)}{\int P(x|p') P(p') dp'} 
+    \end{aligned}
+\end{equation}
+From the definition, $P(p) \sim Beta(p|\alpha, \beta)$ and $P(x|p) \sim Bernoulli(x|p)$, and the Beta function is 
+\begin{equation}
+    Beta(p|\alpha, \beta) = \frac{1}{B(\alpha, \beta)} p^{\alpha - 1} (1-p)^{\beta-1}
+\end{equation}
+
+so $P(p | x)$ should be 
+
+\begin{equation}
+    \begin{aligned}
+        P(p | x) &= \frac{P(x|p) P(p)}{\int_{0}^{1} P(x|p') P(p') dp'}\\
+                 &= \frac{ \binom{m}{n}  p^{m} (1-p)^{n-m} \frac{1}{B(\alpha, \beta)} p^{\alpha - 1} (1-p)^{\beta-1}}{\int_{0}^{1} \binom{m}{n}  p^{m} (1-p)^{n-m} \frac{1}{B(\alpha, \beta)} p^{\alpha - 1} (1-p)^{\beta-1} dp}\\
+                 &= \frac{  p^{\alpha + m - 1} (1-p)^{\beta-1+n-m}}{\int_{0}^{1} p^{\alpha +m - 1} (1-p)^{\beta-1+n-m} dp}\\
+                 &=  \frac{  p^{\alpha + m - 1} (1-p)^{\beta-1+n-m}}{B(\alpha + m, \beta+n-m )}\\
+                 &= Beta(p|\alpha + m, \beta+n-m)
+    \end{aligned}
+\end{equation}
+So, it implies that the Beta distribution can serve as a conjugate prior to the Bernoulli distribution.
+
+
+
+\section{Deep Neural Networks: Have a Try}
+
+\begin{table}
+\Large
+\caption{}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ID   & Features    & Batch Size & Learning Rate & Activation & Regu Rate & Network Shape & Training Loss & Test Loss & Comments \\ \hline
+1    & x1, x2      & 10         & 0.03          & Tanh       & 0         & 4,2           &         0.308 &     0.377 &  dou   \\          
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\section{Clustering: Mixture of Multinomials}
+
+
+\subsection{MLE for multinomial}
+
+Derive the maximum-likelihood estimator for the parameter $\mu = (\mu_i)_{i=1}^{d}$ of a multinomial distribution:
+
+\begin{equation}
+    \begin{aligned}
+        P(x|\mu) =  \frac{n!}{\prod_i x_i!} \prod_{i} \mu_i^{x_i}, i =1,...,d
+    \end{aligned}
+\end{equation}
+where $x_i \in \mathbb{N}, \sum_i x_i = n$ and $0 < \mu_i < 1 , \sum_i \mu_i = 1$.
+
+
+\textbf{Solution:} Consider there is a  dataset $D$ contains $\mathbb{N}$  documents, the probability is  :
+\begin{equation}
+    \begin{aligned}
+        P(D|\mu) &= \prod_{j=1}^{N}  P(x|\mu) \\
+        &=  \prod_{j=1}^{N} \frac{n!}{\prod_i x_{ji}!} \prod_{i} \mu_i^{x_{ji}}\\
+        &=  \prod_{j=1}^{N} \frac{n!}{\prod_i x_{ji}!}  \bullet \prod_{i} \mu_i^{\sum_{j=1}^{N}x_{ji}}
+    \end{aligned}
+\end{equation}
+
+Maximize the log-likelihood function :
+\begin{equation}
+    \begin{aligned}
+    \mathcal{L(\mu)} &= \log P(D|\mu)  \\
+                  &=  \log （\prod_{j=1}^{N}  P(x|\mu)） \\
+    \end{aligned}
+\end{equation}
+
+and the Lagrange multiplier:
+\begin{equation}
+    \begin{aligned}
+    L &= \mathcal{L(\mu)} + \lambda(\sum_{i=1}^{d}\mu_i - 1) \\
+                  &= \sum_{j=1}^{N} \log \frac{n!}{\prod_i x_{ji}!} + \sum_{i=1}^{d} \sum_{j=1}^{N}x_{ij} \log \mu_i + \lambda(\sum_{i=1}^{d}\mu_i - 1) \\
+    \end{aligned}
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+\frac{\partial(\mathcal{L})}{\partial(\mu_i)} =0
+    \end{aligned}
+\end{equation}
+$\Rightarrow$
+\begin{equation}
+    \begin{aligned}
+     \frac{\sum_{j=1}^{N}x_{ij} } {\mu_i} +\lambda &= 0 \\
+    \end{aligned}
+\end{equation}
+$\Rightarrow$
+\begin{equation}
+    \begin{aligned}
+     \mu_i = - \frac{\sum_{j=1}^{N}x_{ij} } {\lambda} \\
+    \end{aligned}
+\end{equation}
+Because of $$\sum_{i=1}^{d}\mu_i = 1$$
+$\Rightarrow$
+\begin{equation}
+    \begin{aligned}
+     \sum_{i=1}^{d} - \frac{\sum_{j=1}^{N}x_{ij} } {\lambda} = 1 \\
+    \end{aligned}
+\end{equation}
+$\Rightarrow$
+\begin{equation}
+    \begin{aligned}
+     \lambda =- N \\
+    \end{aligned}
+\end{equation}
+$\Rightarrow$
+\begin{equation}
+    \begin{aligned}
+     \mu_i = \frac{\sum_{j=1}^{N}x_{ij} } {N} \\
+    \end{aligned}
+\end{equation}
+
+%%====================================================
+\subsection{EM for mixture of multinomials}
+
+
+
+
+\bibliographystyle{plain}
+%\bibliography{bibliography.bib}
+\end{document}
