@@ -1,0 +1,2499 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+  <title>10-701 and 15-781 Machine
+Learning, Spring 2007</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <style type="text/css" media="screen"></style>
+  <meta content="Carlos Guestrin" name="author">
+  <meta content="MSHTML 6.00.2900.2604" name="GENERATOR">
+</head>
+<body
+ style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 40);"
+ alink="#00ffff" link="#33ffff" vlink="#ff99ff">
+<div align="center"><br>
+<h1 style="font-weight: bold;">Machine
+Learning, 10-701 and 15-781
+</h1>
+<h2><big>Prof. <a href="http://www.cs.cmu.edu/~guestrin">Carlos
+Guestrin</a>
+</big><br>
+School of Computer Science, Carnegie Mellon University </h2>
+<h2>Spring 2007</h2>
+<h2><font size="+2"><span><span style="font-weight: bold;">Class
+lectures:</span> Mondays &amp;
+Wednesdays from 10:30-11:50 in Wean Hall <span class="st0" id="st"
+ name="st">7500</span></span></font></h2>
+<h2><font size="+2"><span><span class="st0" id="st" name="st"><span
+ style="font-weight: bold;">Review sessions:</span>
+Thursdays 5:30-6:50 in
+Wean Hall 5409</span></span></font></h2>
+<h2><font size="3"><span><span class="st0" id="st" name="st"></span></span></font></h2>
+<font size="3"><span><span class="st0" id="st" name="st"></span></span></font><br>
+<br>
+</div>
+It is hard to imagine anything more fascinating than automated systems
+that improve their own performance. The study of learning from data is
+commercially and scientifically important. This course is designed to
+give a graduate-level student a thorough grounding in the
+methodologies, technologies, mathematics and algorithms currently
+needed by people who do research in learning and data mining or who may
+need to apply learning or data mining techniques to a target problem.
+The topics of the course draw from classical statistics, from machine
+learning, from data mining, from Bayesian statistics and from
+statistical algorithmics. <br>
+<!--All your Bayes are belong to us!-->
+<br>
+Students entering the class should have a pre-existing working
+knowledge of probability, statistics and algorithms, though the class
+has been designed to allow students with a strong numerate background
+to catch up and fully participate.
+<p><font size="3"><span><br>
+</span></font></p>
+<h2 style="color: rgb(255, 255, 51);"><b>Page
+links</b></h2>
+<h2></h2>
+<ul>
+  <li><a
+ href="#instructors"><font
+ size="3"><span>Instructor</span></font></a>
+  </li>
+  <li><a href="#TAs"><font
+ size="3"><span>Teaching
+Assistants</span></font></a>
+  </li>
+  <li><a href="#AAs"><font
+ size="3"><span>Administrative
+Assistant</span></font></a>
+  </li>
+  <li><a
+ href="#textbooks"><font
+ size="3"><span>Textbooks</span></font></a>
+  </li>
+  <li><a href="#Questions"><font
+ size="3"><span>Questions
+</span></font></a>
+  </li>
+  <li><a
+ href="#announcements"><font
+ size="3"><span>Announcement Emails</span></font></a>
+  </li>
+  <li><a href="#Questions"><font
+ size="3"><span>Questions
+</span></font></a>
+  </li>
+  <li><a
+ href="#course_website"><font
+ size="3"><span>Course
+website</span></font></a>
+  </li>
+  <li><a href="#grading"><font
+ size="3"><span>Grading</span></font></a>
+  </li>
+  <li><a href="#auditing"><font
+ size="3"><span>Auditing</span></font></a>
+  </li>
+<li><a
+ href="#hw_policy"><font
+ size="3"><span>Homework
+policy </span></font></a>
+  </li>
+  <li><a
+ href="#policy_on_collaboration"><font
+ size="3"><span>Collaboration
+policy </span></font></a>
+  </li>
+  <li><a
+ href="#policy_on_late_homework"><font
+ size="3"><span>Late
+homework policy </span></font></a>
+  </li>
+  <li><a
+ href="#regrade_policy"><font
+ size="3"><span>Homework
+regrades policy </span></font></a>
+  </li>
+  <li><a
+ href="#projects"><font
+ size="3"><span>Final
+project</span></font></a>
+  </li>
+  <li><a
+ href="#lecture_schedule"><font
+ size="3"><span>Lecture
+schedule</span></font></a>
+  </li>
+  <li><a
+ href="#review_session_schedule"><font
+ size="3"><span>Review
+session schedule</span></font></a>
+  </li>
+  <li><a
+ href="#exam_schedule"><font
+ size="3"><span>Exam
+schedule</span></font></a>
+  </li>
+  <li><a
+ href="#resources"><font
+ size="3"><span>Additional
+resources</span></font></a>
+  </li>
+  <li><font size="3"><span><a
+ href="#non-cmu">Note
+to people outside CMU</a></span></font>.<br>
+  </li>
+</ul>
+<br>
+<h2 style="color: rgb(255, 255, 51);"><b><a name="instructors"></a>Instructor</b></h2>
+<ul>
+  <li><a href="http://www.cs.cmu.edu/%7Eguestrin">Carlos
+Guestrin</a>,
+Wean Hall 5313, x8-3075, guestrin@cs, Office hours: Thursdays 3-4pm</li>
+</ul>
+<br>
+<h2><b><span style="color: rgb(255, 255, 51);"><a name="TAs"></a>Teaching
+Assistants</span> </b></h2>
+<ul>
+  <li><a href="http://www.cs.cmu.edu/~acarlson/" target="_blank">Andy Carlson</a>
+, Wean 8201, x8-3893, acarlson@cs, Office hours: Mondays 3-5pm
+</li>
+  <li><a href="http://www.cs.cmu.edu/~jch1/" target="_blank">Jonathan Huang</a>
+ , EDSH 200, x8-5576, jch1@cs, Office hours: Tuesdays 1:30-3:30pm</li>
+<li><a href="#" target="_blank">Purna Sarkar</a>
+, Wean 8402, x8-3076, psarkar@cs, Office hours: Fridays 3-5pm
+</li>
+  <li><a href="http://www.cs.cmu.edu/~bziebart/" target="_blank">Brian Ziebart</a>
+Wean 3707, x8-5942, bziebart@cs, Office hours: Tuesdays 10-noon
+</li>
+</ul>
+<p>
+<h2><b><span style="color: rgb(255, 255, 51);"><a name="Questions"></a>Questions
+</span> </b></h2>
+
+The first point of contact for questions pertaining to homework problems is according to the
+following schedule.  Please contact the TA specific to the homework problem that you have a question about.
+Also, questions may be emailed to <a href="mailto:10701-instructors@cs.cmu.edu">10701-instructors@cs.cmu.edu</a>.
+<p>
+
+
+<table bgcolor="blue" border="1">
+<tr>
+<td>
+<table>
+<tr>
+<td>HMWK #1
+<br>
+<small>
+Out: 24-Jan
+<br>
+In: 7-Feb 
+</small>
+	<br>
+	Assignment: <a href="http://www.cs.cmu.edu/~guestrin/Class/10701/Handouts/HW1/hw1.pdf" target="_blank">[PDF]</a><br>
+        Solutions:  <a href="http://www.cs.cmu.edu/~guestrin/Class/10701/Handouts/HW1/hw1_sol.pdf" target="_blank">[PDF]</a><br> 
+	UCI Breast Cancer dataset <a href="http://www.cs.cmu.edu/~guestrin/Class/10701/Handouts/HW1/breast-cancer.zip">[zip]</a>
+
+</td>
+
+</tr>
+<tr>
+<td>
+</td>
+
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table>
+<tr>
+<td>HMWK #2
+<br>
+<small>
+Out: 7-Feb
+<br>
+In: 21-Feb
+</small>
+
+	<br>
+        Assignment	
+	<a href="Handouts/HW2/hw2.pdf" target="_blank">[PDF]</a>
+	<br>
+        Solutions:  <a href="Handouts/HW2/hw2_sol.pdf" target="_blank">[PDF]</a><br>
+        Bupa dataset <a href="Handouts/HW2/bupa.zip">[zip]</a>
+
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table>
+<tr>
+<td>HMWK #3
+<br>
+<small>
+Out: 21-Feb
+<br>
+In: Monday 5-Mar <br>
+(no late days allowed)
+</small> 
+	<br>
+	Assignment: <a href="Handouts/HW3/hw3.pdf" target="_blank">[PDF]</a><br>
+        Solutions:  <a href="Handouts/HW3/hw3_sol.pdf" target="_blank">[PDF]</a>
+<br>	
+	libsvm download: <a href = "http://www.csie.ntu.edu.tw/~cjlin/cgi-bin/matlab.cgi?+http://www.csie.ntu.edu.tw/~cjlin/libsvm/matlab+zip">
+	[link]</a><br>
+	Matlab and data files: <a href="Handouts/HW3/hw3_matlab.zip">[zip]</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table>
+<tr>
+<td>MIDTERM
+
+	<br>
+	Solutions
+	<a href="Handouts/midterm_sol.pdf" target="_blank">[PDF]</a><br>
+
+</td>
+<td>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table>
+<tr>
+<td>HMWK #4
+<br>
+<small>
+Out: 28-Mar
+<br>
+In: 11-Apr
+</small>
+
+	<br>
+	Assignment: <a href="Handouts/HW4/hw4.pdf" target="_blank">[PDF]</a><br>
+	Solutions:  <a href="Handouts/HW4/hw4_sol.pdf" target="_blank">[PDF]</a><br>
+	Matlab and data files <a href="Handouts/HW4/ocrdataset.zip">[zip]</a>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table>
+<tr>
+<td>HMWK #5
+<br>
+<small>
+Out: 11-Apr
+<br>
+In: 25-Apr
+</small>
+	<br>
+	Assignment: <a href="Handouts/HW5/hw5.pdf" target="_blank">[PDF]</a><br>
+	Matlab and data files <a href="Handouts/HW5/hw5_data.zip">[zip]</a><br>
+	Solutions:  <a href="Handouts/HW5/hw5_sol.pdf" target="_blank">[PDF]</a> 
+</td>
+<td>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+        </table>
+   
+<h2><b><span style="color: rgb(255, 255, 51);"><a name="AAs"></a>Adminstrative
+Assistant</span> </b></h2>
+<ul>
+  <li>Monica Hopes, x8-5527, meh@cs, Wean Hall 4619</li>
+</ul>
+<h2 style="color: rgb(255, 255, 51);"><b><span
+ style="font-style: italic;"><a name="textbooks"></a></span>Textbooks
+</b></h2>
+<p></p>
+<ul>
+  <li>Textbook: <a href="http://research.microsoft.com/~cmbishop/PRML/index.htm"><i>Pattern Recognition and Machine Learning</i></a>, Chris Bishop.</li>
+  <li>Optional textbook: <a
+ href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.html"><i>Machine
+Learning</i></a>,
+Tom Mitchell. </li>
+  <li>Optional textbook: <a
+ href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/"><i>The Elements of Statistical Learning: Data Mining, Inference, and
+Prediction</i></a>,
+	Trevor Hastie, Robert Tibshirani, Jerome Friedman.</li>
+  <li>Optional textbook: <a
+ href="http://www.inference.phy.cam.ac.uk/mackay/itila/"><i>Information Theory, Inference, and Learning Algorithms</i></a>,
+	David Mackay.</li></ul>
+<p><br>
+</p>
+<h2 style="color: rgb(255, 255, 51);"><b><span
+ style="font-style: italic;"><a name="announcements"></a></span>Announcement Emails
+</b></h2>
+<p></p>
+<ul>
+  <li>Class announcements will be broadcasted using a group email list:  10701-announce@cs.cmu.edu
+<br>If you are registered for the course, you have automatically been added to the mail group.  If you are
+for some reason NOT receiving these announcements, you can subscribe via the
+<a href="https://mailman.srv.cs.cmu.edu/mailman/listinfo/10701-announce">10701-announce list page</a>.
+</li>
+<li>For changes (incl. additions or removal) to your membership in the course list, please make changes directly via the <a href="https://mailman.srv.cs.cmu.edu/mailman/listinfo/10701-announce" target="_blank">list administration page</a><small> [https://mailman.srv.cs.cmu.edu/mailman/listinfo/10701-announce]</small>
+</li>
+</ul>
+<!--
+	<p><br>
+	</p>
+	<h2 style="color: rgb(255, 255, 51);"><b><a name="course_website"></a>Course
+	Website (this page)</b></h2>
+	<p></p>
+	<ul>
+  	<li><a href="http://www.cs.cmu.edu/%7Eguestrin/Class/10701">http://www.cs.cmu.edu/~guestrin/Class/10701</a>
+  	</li>
+  	</ul>
+-->
+<p><b style="color: rgb(255, 255, 51);"><br>
+</b></p>
+<h2><b style="color: rgb(255, 255, 51);"><a name="grading"></a>Grading</b><span
+ style="color: rgb(255, 255, 51);"></span></h2>
+<p></p>
+<ul>
+  <li>Final grades will be based
+on midterm (20%), homework (5
+assignments, 30%), final project (20%), and final exam (30%). </li>
+</ul>
+<p><b><br>
+</b></p>
+<h2><b style="color: rgb(255, 255, 51);"><a name="auditing"></a>Auditing</b><span
+ style="color: rgb(255, 255, 51);"></span></h2>
+<ul>
+<li>If you are a student, and you don't want to take the class for
+credit, you must register to audit the class.  To satisfy the auditing
+requirement, you must either: </li>
+<ul>
+  <li>Do <b>*two*</b> homeworks, and get at least 75% of the points in each; or </li>
+  <li>Take the final, and get at least 50% of the points; or </li>
+  <li>Do a class project and do *one* homework, and get at least 75% of the
+points in the homework; 
+	<ul>
+		<li>
+			Like any class project, it must address a topic related to
+machine learning and you  must have started the project
+while taking this class (can't be something you did last semester).  You
+will need to submit a project proposal with everyone else, and present
+a poster with everyone.  You don't need to submit a milestone or final
+paper.  You must get at least 80% on the poster presentation part of
+the project. 
+		</li>
+	</ul>
+	</li>
+  <li>Please, send us an email saying that you will be auditing the
+class and what you plan to do. </li>
+</ul>
+<li>If you are not a student and want to sit in the class, please get
+authorization
+from the instructor. </li>
+</ul>
+<p><b><br>
+</b></p>
+
+<h2 style="color: rgb(255, 255, 51);"><b><a
+ name="hw_policy"></a>Homework
+policy</b></h2>
+<p>
+Important Note: As we often reuse problem set questions from previous
+years, covered by papers and webpages,  we expect the students not to
+copy, refer to, or look at the solutions in preparing their answers.
+Since this is a graduate class, we expect students to want to learn
+and not google for answers.  The purpose of problem sets in this class
+is to help you think about the material, not just give us the right
+answers. Therefore, please restrict attention to the books mentioned
+on the webpage when solving problems on the problem set. If you do
+happen to use other material, it must be acknowledged clearly with a
+citation on the submitted solution. </p>
+<b><br>
+</b>
+
+<h2 style="color: rgb(255, 255, 51);"><b><a
+ name="policy_on_collaboration"></a>Collaboration
+policy</b></h2>
+<p>Homeworks will be done
+individually: each student must hand in their
+own answers. It <b>is</b>
+acceptable, however, for students to
+collaborate in figuring out answers and helping each other solve the
+problems. We will be assuming that, as participants in a graduate
+course, you will be taking the responsibility to make sure you
+personally understand the solution to any work arising from such
+collaboration. You also must indicate on each homework with whom you
+collaborated. The final project may be completed by small teams. </p>
+<b><br>
+</b>
+<h2><b style="color: rgb(255, 255, 51);"><a
+ name="policy_on_late_homework"></a>Late
+homework policy</b><span style="color: rgb(255, 255, 51);"></span>
+</h2>
+<ul>
+  <li>You will be allowed 3 total
+late days without penalty for the
+entire semester. For instance, you may be late by 1 day on three
+different homeworks or late by 3 days on one homework. Once those days
+are used, you will be penalized according to the policy below:
+    <ul>
+      <li>Homework is worth full
+credit at the beginning of class on
+the due date. </li>
+      <li>It is worth half credit
+for the next 48 hours. </li>
+      <li>It is worth zero credit
+after that. </li>
+    </ul>
+  </li>
+  <li>You must turn in all of the
+5 homeworks, even if for zero credit,
+in order to pass the course. </li>
+  <li>Turn in all late homework
+assignments to <a
+ href="#AAs"><font
+ size="3">Monica</font></a><font size="3">. </font></li>
+</ul>
+<font size="3"><br>
+</font>
+<h2><font size="3"><b style="color: rgb(255, 255, 51);"><a
+ name="regrade_policy"></a>Homework
+regrades policy</b><span style="color: rgb(255, 255, 51);"></span>
+</font></h2>
+<p><font size="3">If you feel that we have made an error in
+grading
+your homework, please turn in your homework with a <i>written</i>
+explanation to Monica, and we will consider your request. Please note
+that regrading of a homework may cause your grade to go up or down. </font></p>
+<font size="3"><br>
+</font>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a name="projects"></a>Final
+project</font></h2>
+<ul style="color: rgb(255, 255, 51);">
+</ul>
+<ul>
+  <font size="3">
+
+  <!-- <li> <a
+href="#">
+Project details are out!
+</a>
+-->
+
+  </li>
+  <li><a href="projects.html">Project Webpage - Ideas and Details</a></li>
+  <li>Project proposal <b>due Wednesday, March 21st</b> </li>
+  <li>Graded milestone <b>due Monday, April 16th</b> (20% of project grade) </li>
+  <li>Poster session <b>Friday, May 4th 2:00-5:00pm; NSH Atrium</b></li>
+  <li>Paper <b>due by 2pm on Thursday, May 10th </b> (via electronic submission to the list)</li>
+  </font>
+</ul>
+<font size="3">For project
+milestone, roughly half of the project work
+should be completed. A short, graded write-up will be required, and we
+will provide feedback.<!-- <li> <b>Some data sets might be useful to you:</b> </li> <ul> <li> <a href="http://www.ics.uci.edu/%7Emlearn/MLRepository.html">UCI ML Repository (Various) </a></li> <li> <a href="%20http://kdd.ics.uci.edu/%20"> UCI KDD Repository (Various) </a></li> <li> <a href="http://people.csail.mit.edu/u/j/jrennie/public_html/20Newsgroups/">20 News groups (Text)</a></li> </ul> !-->
+<br>
+</font>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a
+ name="lecture_schedule"></a>Lecture
+schedule 
+</font></h2>
+<font size="3"><br>
+<table style="text-align: left;" border="1" cellpadding="2" cellspacing="2" width="90%">
+  <tbody>
+    <tr align="middle">
+      <td style="vertical-align: middle;" width="25%">
+      <h3>Module</h3>
+      </td>
+      <td style="vertical-align: middle;" width="35%">
+      <h3>Material covered</h3>
+      </td>
+      <td style="vertical-align: middle;">
+      <h3>Class details, online material, and homework<br>
+      </h3>
+      </td>
+    </tr>
+<tr>
+<td style="font-weight: bold; vertical-align: middle;">
+Module 1; Basics
+<br>
+<span style="font-weight: normal;">
+(1 Lectures)
+</span>
+</td>
+<td style="vertical-align: middle;">
+<ul>
+<li>What is learning?
+<ul>
+<li>Version spaces </li>
+<li>Sample complexity </li>
+<li>Training set/test
+set split<br>
+</li>
+</ul>
+</li>
+<li>Point estimation
+<ul>
+<li>Loss functions<br>
+</li>
+</ul>
+<ul>
+<li>MLE </li>
+<li>Bayesian </li>
+<li>MAP </li>
+<li>
+Bias-Variance trade off
+</li>
+</ul>
+</li>
+</ul>
+</td>
+
+<td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Jan 15:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	** No Class.  MLK B-Day **
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Jan 17:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<ul>
+	<li>Lecture: What's ML, Point estimation
+	<br>
+	<a href="Slides/intro.pdf">
+	[Slides]</a>
+	<a href="Slides/intro-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>Additional Reference:<a href="http://www.autonlab.org/tutorials/prob18.pdf">
+	Andrew Moore's basic probability tutorial
+</a>
+<li><a href="readings.html#lecture1">Readings</a>: Bishop 2.1
+	</ul>
+</td>
+<td>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+2:
+Linear models<br>
+      <span style="font-weight: normal;">(3
+Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>Linear regression <a href="http://www.mste.uiuc.edu/users/exner/java.f/leastsquares/" target="_blank">[Applet]</a>
+<br><small>http://www.mste.uiuc.edu/users/exner/java.f/leastsquares/</small>
+</li>
+        <li>Bias-Variance tradeoff </li>
+        <li>Overfitting </li>
+        <li>Bayes optimal classifier </li>
+        <li>Naive Bayes  <a href="http://www.cs.technion.ac.il/~rani/LocBoost/" target="_blank">[Applet]</a>
+<br><small>http://www.cs.technion.ac.il/~rani/LocBoost/</small></li>
+        <li>Logistic regression <a href="http://www.cs.technion.ac.il/~rani/LocBoost/" target="_blank">[Applet]</a></li>
+        <li>Discriminative v.
+Generative models <a href="http://www.cs.technion.ac.il/~rani/LocBoost/" target="_blank">[Applet]</a><br>
+        </li>
+      </ul>
+      </td>
+<td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Jan. 22:
+</b>
+<ul>
+<li>Lecture: Gaussians, Linear Regression, Bias-Variance Tradeoff
+<br>
+<a href="Slides/gaussians-regression.pdf">
+[Slides]</a>
+<a href="Slides/gaussians-regression-annotated.pdf">
+[Annotated]
+</a>
+<li><a href="readings.html#lecture2">Readings</a>: Bishop 1.1 to 1.4, Bishop 3.1, 3.1.1, 3.1.4, 3.1.5, 3.2, 3.3, 3.3.1, 3.3.2
+</ul>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+<!--
+Homework #1 out
+<br>Assignment: <a href#" target="_blank">[PDF]</a>
+<br>
+Prob#2 Chess dataset <a href="#">[zip]</a>
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Jan 24:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<ul>
+	<li>Lecture:
+	Overfitting, What's learning - revisited, Naive Bayes
+	<br>
+	<a href="Slides/overfitting-naivebayes.pdf">
+	[Slides]</a>
+	<a href="Slides/overfitting-naivebayes-annotated.pdf">
+	[Annotated]
+</a>
+<li><a href="readings.html#lecture3">Readings</a>: Bishop 1.3, 1.5.5, 3.2, <a href="http://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf">Mitchell's Chapter on Naive Bayes and Logistic Regression</a> (Sections 1 and 2)
+	</ul>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Jan 29:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<ul>
+	<li>Lecture:
+	Naive Bayes, Generative v. Discriminative, Logistic Regression<br>
+	<a href="Slides/naivebayes-logisticregression.pdf">
+	[Slides]</a>
+	<a href="Slides/naivebayes-logisticregression-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>
+	<a href="readings.html#lecture4">Required Reading</a> :
+	<a href="http://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf">
+	Mitchell's Chapter on Naive Bayes and Logistic Regression
+</a> (All sections)
+	<li>
+	Optional Reading:
+	<a href="Handouts/Readings/ng-jordan-2001.ps">
+	Ng and Jordan's NIPS 2001 paper on
+	Discriminative versus Generative Learning
+	</a>
+	</ul>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+
+
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+3: Non-linear models<br>
+Model selection<br>
+      <span style="font-weight: normal;">(5
+Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>Decision trees <a href="http://www.cs.technion.ac.il/~rani/LocBoost/" target="_blank">[Applet]</a> </li>
+        <li>Overfitting, again </li>
+        <li>Regularization </li>
+        <li>MDL </li>
+        <li>Cross-validation </li>
+        <li>Boosting <a href="http://www.cse.ucsd.edu/~yfreund/adaboost/" target="_blank">[Adaboost Applet]</a>
+<br><small>www.cse.ucsd.edu/~yfreund/adaboost</small> </li>
+        <li>Instance-based
+learning
+          <a href="http://www.site.uottawa.ca/~gcaron/applets.htm" target="_blank">[Applet]</a>
+<br><small>www.site.uottawa.ca/~gcaron/applets.htm</small><ul>
+            <li>K-nearest
+neighbors </li>
+            <li>Kernels<br>
+            </li>
+          </ul>
+        </li>
+        <li><font size="3">Neural nets <a href="http://www.cs.cmu.edu/afs/cs/academic/class/15782-s04/" target="_blank">[CMU Course]</a>
+<br><small>www.cs.cmu.edu/afs/cs/academic/class/15782-s04/</small>
+</li>
+      </ul>
+      </td>
+
+<td>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Jan. 31:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+
+
+	<ul>
+	<li>Lecture:
+	Logistic Regression, Decision Trees
+	<br>
+	<a href="Slides/logisticregression-decisiontrees.pdf">
+	[Slides]</a>
+	<a href="Slides/logisticregression-decisiontrees-annotated.pdf">
+	[Annotated]
+	</a>
+        <li><a href="readings.html#lecture5">Readings:</a>
+        (Bishop - 14.4) Tree-based Models
+        <li>Recommended Reading: Nils Nilsson's Chapter (All Sections): 
+        <a href="http://ai.stanford.edu/people/nilsson/MLDraftBook/ch6-ml.pdf">
+        Decision Trees</a>
+        <li>Optional Review of Boolean Logic/DNF: Nils Nilsson's Chapter
+        <a href="http://ai.stanford.edu/people/nilsson/MLDraftBook/ch2-ml.pdf">
+        Boolean Functions</a> (first 4 pages)
+        </ul>
+
+</td>
+<td align="right">
+&nbsp;
+
+</td>
+</tr>
+</table>
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Feb 5:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<ul>
+	<li>Lecture:
+	Decision Trees
+	<br>
+	<a href="Slides/decisiontrees.pdf">
+	[Slides]</a>
+	<a href="Slides/decisiontrees-annotated.pdf">
+	[Annotated]
+	</a>
+        <li><a href="readings.html#lecture5">Readings:</a>
+        (Bishop - 14.4) Tree-based Models
+        <li>Recommended Reading: Nils Nilsson's Chapter (All Sections): 
+        <a href="http://ai.stanford.edu/people/nilsson/MLDraftBook/ch6-ml.pdf">
+        Decision Trees</a>
+        <li>Optional Review of Boolean Logic/DNF: Nils Nilsson's Chapter
+        <a href="http://ai.stanford.edu/people/nilsson/MLDraftBook/ch2-ml.pdf">
+        Boolean Functions</a> (first 4 pages)
+	</ul>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Feb. 7:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+        <ul>
+	<li>Lecture:
+	Boosting, Cross Validation, Simple Model Selection, Regularization, MDL
+	<br>
+	<a
+	href="Slides/boosting-xvalidation-regularization.pdf">
+	[Slides]</a>
+	<a href="Slides/boosting-xvalidation-regularization-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture7">Readings:</a> 
+           (Bishop 14.3) Boosting
+	<li> <a href="Handouts/Readings/boosting-schapire.ps">
+	Schapire Boosting tutorial</a>
+	<li> (Bishop 1.3) Model Selection/
+                  Cross Validation
+        
+	</ul>
+</td>
+<td align="right">
+&nbsp;
+<td align="right">
+<!--
+	EXTENSION:
+	Homework #1 due
+	<br>
+	(beginning of class)
+	<br>
+	Homework #2 out
+	<br>
+	Updated assignment with more hints:
+	<a href="#" target="_blank">[PDF]</a>
+	<br>
+	Voting dataset <a href="#">[zip]</a>
+-->
+</td>
+
+</td>
+</td>
+</tr>
+</table>
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Feb. 12:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+        <ul>
+	<li>Lecture:
+	Cross Validation, Simple Model Selection, Regularization, MDL,
+	Neural Nets
+	<br>
+	<a
+	href="Slides/xvalidation-regularization-neuralnets.pdf">
+	[Slides]</a>
+	<a href="Slides/xvalidation-regularization-neuralnets-annotated.pdf">
+	[Annotated]</a>
+        <li><a href="readings.html#lecture8">Readings:</a>  (Bishop 1.3)
+             Model Selection / Cross Validation
+        <li>(Bishop 3.1.4) Regularized least squares	
+        <li>(Bishop 5.1) Feed-forward Network Functions
+        </ul>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Feb. 14:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<ul>
+	<li>Lecture:
+	Neural Nets, Instance-based Learning
+	<br>
+	<a
+	href="Slides/neuralnets-instancebased.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/neuralnets-instancebased-annotated.pdf">
+	[Annotated]
+	</a>
+        <li><a href="readings.html#lecture9">Readings:</a> 
+        (Bishop 5.1) Feed-forward Network Functions
+        <li>(Bishop 5.2) Network Training
+        <li>(Bishop 5.3) Error Backpropagation
+	</ul>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+4:
+Margin-based approaches<br>
+      <span style="font-weight: normal;">(2
+Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>SVMs <a href="http://www.site.uottawa.ca/~gcaron/applets.htm" target="_blank">[Applets]</a>
+<br><small>www.site.uottawa.ca/~gcaron/applets.htm</small></li>
+        <li>Kernel trick<br>
+        </li>
+      </ul>
+      </td>
+
+<td>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Feb 19:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Instance-based Learning,
+	SVMs
+	<br>
+	<a
+	href="Slides/instancebased-svms.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/instancebased-svms-annotated.pdf">
+	[Annotated]
+	<li><a href="readings.html#lecture10">Readings:</a> 
+        (Bishop 2.5) Nonparametric Methods
+	</a>
+</td>
+<td align="right">
+<!--
+	Homework #2 due
+	<br>
+	(beginning of class)
+	<br>
+	<a href="#">Homework #3 out</a>
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Feb. 21:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	SVMs
+	<br>
+	<a
+	href="Slides/svms.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/svms-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture11">Readings:</a> 
+	(Bishop 6.1,6.2) Kernels
+	<li>(Bishop 7.1) Maximum Margin Classifiers
+	<li><a href="Handouts/Readings/hearst98.pdf">Hearst 1998: High Level Presentation</a>
+	<li><a href="http://www.kernel-machines.org/papers/Burges98.ps.gz">Burges 1998: Detailed Tutorial</a>
+	<li>(Optional) <a href="http://research.microsoft.com/users/jplatt/smo-book.pdf"> Platt 1998: Training SVMs with Sequential Minimal Optimization</a>
+	</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+<tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+5:
+Learning theory<br>
+      <span style="font-weight: normal;">(3
+Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>Sample complexity</li>
+        <li>PAC learning <a href="http://www.site.uottawa.ca/~gcaron/applets.htm" target="_blank">[Applets]</a>
+<br><small>www.site.uottawa.ca/~gcaron/applets.htm</small></li>
+        <li>Error bounds </li>
+        <li>VC-dimension</li>
+        <li>Margin-based bounds</li>
+        <li><font size="3">Large-deviation bounds
+          <ul>
+            <li>Hoeffding's
+inequality, Chernoff bound </li>
+          </ul>
+          </font></li>
+        <li>Mistake bounds</li>
+        <li>No Free Lunch theorem</li>
+      </ul>
+      </td>
+<td>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Feb. 26:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<li>Lecture:
+	SVMs - The Kernel Trick
+	<br>
+	<a
+	href="Slides/kernels.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/kernels-annotated.pdf">
+	[Annotated]
+	</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Feb. 28
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<li>Lecture:
+	SVMs - The Kernel Trick, Learning Theory
+	<br>
+	<a
+	href="Slides/kernels2-learning-theory.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/kernels2-learning-theory-annotated.pdf">
+	[Annotated]
+	</a>
+<td align="right">
+<!--
+	Homework #3 due
+	<br>
+	(beginning of class)
+	<br>
+	Project Out
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Mar. 5
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Learning Theory,
+	Midterm review
+	<br>
+	<a
+	href="Slides/learning-theory2-big-picture.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/learning-theory2-big-picture-annotated.pdf">
+	[Annotated]
+	</a>
+        <li><a href="readings.html#lecture12">Readings:</a>
+        (Mitchell Chapter 7) Computational Learning Theory
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+    <tr>
+      <td style="vertical-align: top;">
+      <h2>Mid-term Exam<br>
+      </h2>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+All material thus far
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Mar 7:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<!--
+	Mid-term exam (in class)
+-->
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+    <tr>
+      <td style="vertical-align: top;">
+      <h2>Spring break</h2>
+      </td>
+      <td style="vertical-align: top; text-align: center;">
+      <h2>&nbsp;</h2>
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Mar. 12:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+** No class **
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Mar. 14:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+** No class **
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;"><font
+ size="3">Module 6: Structured models<br>
+      <span style="font-weight: normal;">(4
+Lectures)<br>
+      </span></font><span style="font-weight: normal;"></span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>HMMs
+          <ul>
+            <li>Forwards-Backwards
+            </li>
+            <li>Viterbi </li>
+            <li>Supervised learning<br>
+            </li>
+          </ul>
+        </li>
+        <li>Graphical Models
+          <ul>
+	    <li><a href="http://www.pmr.poli.usp.br/ltd/Software/javabayes/Home/">Applet: Java Bayes</a>
+            <li>Representation </li>
+            <li>Inference </li>
+            <li>Learning </li>
+            <li>BIC </li>
+          </ul>
+        </li>
+      </ul>
+      </td>
+
+<td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Mar. 19:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Bayes nets - Representation
+	<br>
+	<a
+	href="Slides/bns.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/bns-annotated.pdf">
+	[Annotated]
+	</a>
+        <li><a href="readings.html#lecture13">Readings:</a>
+        (Bishop 8.1,8.2) Bayesian Networks
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Mar. 21:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Bayes nets - Representation (cont.), Inference
+	<br>
+	<a
+	href="Slides/bns-inference.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/bns-inference-annotated.pdf">
+	[Annotated]
+	</a>
+</td>
+<td align="right">
+<!--
+	Homework #4 out
+	<br>
+	Project Proposal due
+	<br>
+	(beginning of class)
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Mar. 26:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Bayes nets -
+	Inference  (cont.), <br>
+	HMMs
+	<br>
+	<a
+	href="Slides/bns-inference2-hmms.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/bns-inference2-hmms-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture14">Readings:</a>
+	(Bishop 8.4.1,8.4.2) - Inference in Chain/Tree Structures<br><a href="Handouts/Readings/hmms-rabiner.pdf">
+	Rabiner's Detailed HMMs Tutorial</a>
+</td>
+<td align="right">
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Mar. 28:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	HMMs <br>
+	Bayes nets - Structure Learning
+	<br>
+	<a
+	href="Slides/hmms-bns-learn.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/hmms-bns-learn-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>Additional Reading:
+	<a
+	href="ftp://ftp.research.microsoft.com/pub/tr/tr-95-06.pdf">
+	Heckerman BN Learning Tutorial</a>
+	<li>Additional Reading:
+	<a
+	href="http://www.cs.huji.ac.il/%7Enir/Papers/FrGG1.pdf">
+	Tree-Augmented Naive Bayes paper</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+7:
+Unsupervised <br>
+and&nbsp; semi-supervised learning<br>
+      <span style="font-weight: normal;">(6
+Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>K-means </li>
+  <ul>
+    <li><a href="http://www.elet.polimi.it/upload/matteucc/Clustering/tutorial_html/AppletKM.html">
+    Applet: K-means </a>
+  </ul>
+        <li>Expectation
+Maximization (EM)</li>
+        <ul>
+          <li>mixture of Gaussians</li>
+    <ul>
+    <li><a href="http://www.neurosci.aist.go.jp/%7Eakaho/MixtureEM.html">
+    Applet: Mixture of Gaussians </a>
+    </ul>
+          <li>for training Bayes
+nets</li>
+          <li>for training HMMs</li>
+        </ul>
+        <li>Combining labeled and
+unlabeled
+data</li>
+        <ul>
+          <li>EM</li>
+          <li>reweighting labeled
+data</li>
+          <li>Co-training</li>
+          <li>unlabeled data and
+model selection</li>
+        </ul>
+        <li>Dimensionality
+reduction </li>
+        <ul>
+          <li>PCA, SVD</li>
+    <ul>
+    <li><a
+href="http://www.igi.tugraz.at/lehre/CI/algorithms/pca_applet.html">
+    Applet: PCA </a>
+    </ul>
+        </ul>
+      <li>Feature selection </li>
+      </ul>
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Apr. 2:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Bayes nets - Structure Learning
+	<br>
+	Clustering - K-means & Gaussian mixture models <br>
+	<a
+	href="Slides/bns-learn-clustering.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/bns-learn-clustering-annotated.pdf">
+	[Annotated]
+	</a>
+	<br>
+	<a href="readings.html#lecture16">Readings</a>:  (Bishop 9.1, 9.2) - K-means, Mixtures of Gaussian 
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Apr. 4:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Clustering - K-means & Gaussian mixture models <br>
+	<a
+	href="Slides/clustering.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/clustering-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture17">Readings</a>:
+	<a
+	href="ftp://ftp.cs.utoronto.ca/pub/radford/emk.pdf">
+	Neal and Hinton EM paper</a>
+</td>
+<td align="right">
+<!--
+	Homework #4 due
+	<br>
+	(beginning of class)
+	<br>
+	Homework #5 out
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Apr. 9:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	EM <br>
+	Baum-Welch (EM for HMMs)
+	<br>
+	<a
+	href="Slides/em-baumwelch.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/em-baumwelch-annotated.pdf">
+	[Annotated]
+	</a>
+	<br>
+	<a href="readings.html#lecture18">Readings</a>: (Bishop 9.3, 9.4) - EM
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Apr. 11:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Baum-Welch (EM for HMMs) <br>
+	EM for Bayes Nets<br>
+	<a
+	href="Slides/baumwelch.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/baumwelch-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture19">Readings</a>:
+	<a
+	href="Handouts/Readings/zoubin-hmms.pdf">
+	Ghahramani, "An introduction to HMMs and Bayesian Networks"</a>
+</td>
+<td align="right">
+<!--
+	Project milestone due
+	<br>
+	(beginning of class)
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Apr. 16:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+<li>Lecture:
+	EM for Bayes Nets<br>
+	Co-Training for semi-supervised learning<br>
+	<a
+	href="Slides/em-bns-semisupervised.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/em-bns-semisupervised-annotated.pdf">
+	[Annotated]
+	</a>
+	<li><a href="readings.html#lecture20">Readings</a>:
+	<a
+	href="http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-11/www/wwkb/colt98_final.ps">
+	Blum and Mitchell co-training paper</a>
+	<li>Optional reading:
+	<a
+	href="http://www.cs.cornell.edu/People/tj/publications/joachims_99c.pdf">
+	Joachims Transductive SVMs paper</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Apr. 18:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	Guest lecture by 
+	<a href="http://www.cs.cmu.edu/~nasmith/">Noah Smith</a>
+</td>
+<td align="right">
+<!--
+	Homework #5 due
+	<br>
+	(beginning of class)
+-->
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Apr. 23:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Semi-supervised learning in SVMs<br>
+	Principal Component Analysis (PCA)<br>
+	<a
+	href="Slides/cotrain-tsvms-pca.pdf">
+	[Slides]</a>
+	 <a
+	href="Slides/cotrain-tsvms-pca-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>Reading:
+	<a href="http://www.snl.salk.edu/~shlens/pub/notes/pca.pdf">
+	Shlens' PCA tutorial</a>
+	<li>Optional reading:
+	<a
+	href="http://www.citebase.org/cgi-bin/fulltext?format=application/pdf&identifier=oai:arXiv.org:physics/0208101">
+	Wall et al. 2003 - PCA for gene expression data</a>
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+8:
+Learning to make decisions<br>
+      <span style="font-weight: normal;">
+(3 Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>Markov decision
+processes </li>
+        <li>Reinforcement learning
+        </li>
+      </ul>
+      </td>
+      <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., Apr. 25:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Principal Component Analysis (PCA) (cont.)<br>
+	Markov Decision Processes<br>
+	<a
+	href="Slides/pca-mdps.pdf">
+	[Slides]</a>
+	 <a
+	href="Slides/pca-mdps-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>Reading:
+	<a href="Handouts/Readings/kaelbling-reinforcement.pdf">
+	Kaelbling et al. Reinforcement Learning tutorial</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Mon., Apr 30:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Markov Decision Processes<br>
+	Reinforcement Learning<br>
+	<a
+	href="Slides/mdps.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/mdps-annotated.pdf">
+	[Annotated]
+	</a>
+	<li>Reading:
+	<a href="Handouts/Readings/rmax.ps">
+	Brafman and Tennenholtz: Rmax paper</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle;">Module
+9:
+Advanced topics<br>
+      <span style="font-weight: normal;">
+(3 Lectures)</span><br>
+      </td>
+      <td style="vertical-align: middle;">
+      <ul>
+        <li>Text data</li>
+        <li>Hierarchial Bayesian models</li>
+        <li>Tackling very large
+datasets<br>
+        </li>
+        <li>Active learning<br>
+        </li>
+        <li>Overview of follow-up
+classes<br>
+        </li>
+      </ul>
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Wed., May 2:
+</b>
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+	<li>Lecture:
+	Reinforcement Learning<br>
+	Big Picture <br>
+	<a
+	href="Slides/rl.pdf">
+	[Slides]</a>
+	<a
+	href="Slides/rl-annotated.pdf">
+	[Annotated]
+	</a>
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+
+    <tr>
+      <td style="vertical-align: top;">
+      <h2>Project Poster Session</h2>
+      </td>
+      <td style="vertical-align: top; text-align: center;">
+&nbsp;
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Fri., May 4:
+</b>
+<br>
+	Newell-Simon Hall Atrium
+	<br>
+	2:00-5:00pm
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+    <tr>
+      <td style="vertical-align: top;">
+      <h2>Project Paper</h2>
+      </td>
+      <td style="vertical-align: top; text-align: center;">
+&nbsp;
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+Thur., May 10:
+</b>
+<br>
+	Project paper due
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+
+    <tr>
+      <td style="vertical-align: top;">
+      <h2>Final Exam</h2>
+      </td>
+      <td style="vertical-align: top; text-align: center;">
+      All material thus far
+      </td>
+   <td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<b>
+	Tuesday, May 15th,  1-4 p.m.
+</b>
+<br>
+Location: Baker Hall, Room A51 
+</td>
+<td width="50">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="10">
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+  </tbody>
+</table>
+<br>
+</font>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a name="review_session_schedule"></a>
+Recitation
+</font>
+</h2>
+All recitations are Thursdays, 5:30-6:50, Wean Hall 5409, unless otherwise noted.<font size="3"><br>
+<br>
+<table border="1" width="800">
+  <tbody>
+    <tr>
+      <td width="75">
+      <div align="center"><strong>Date</strong></div>
+      </td>
+      <td width="100">
+      <div align="center"><strong>Instructor</strong></div>
+      </td>
+      <td width="700">
+      <div align="center"><strong>Topic</strong></div>
+      </td>
+    </tr>
+<tr><td>
+Jan. 18
+</td><td>
+Andy
+&nbsp;
+</td><td>
+Review of Probability; Distributions; Bayes Rule
+</td></tr>
+
+<tr><td>
+Jan. 24
+<br>
+
+<br>
+5:30-6:50pm<br>
+NSH 3305
+</td><td>
+Brian
+</td><td>
+Introduction to Matlab <a href="matlab_tutorial.zip">(code)</a> <a href="
+https://www.cmu.edu/myandrew/">(obtain Matlab)</a> 
+
+</td></tr>
+
+<tr><td>
+Jan. 25
+</td><td>
+Jon
+</td><td>
+Naive Bayes Classification <a href="http://www.cs.cmu.edu/~guestrin/Class/10701/Handouts/recitations/nbslides.ppt">[Slides]</a> &nbsp;
+</td></tr>
+
+<tr><td>
+Feb. 1
+</td><td>
+Purna
+</td><td>
+Logistic Regression
+</td></tr>
+
+<tr><td>
+Feb. 8
+</td><td>
+Andy
+</td><td>
+Boosting
+</td></tr>
+
+<tr><td>
+Feb. 15
+</td><td>
+Brian
+&nbsp;
+</td><td>
+Neural Networks &nbsp;
+</td></tr>
+
+<tr><td>
+Feb. 22
+</td><td>
+Jon
+&nbsp;
+</td><td>
+Support Vector Machines  &nbsp;
+</td></tr>
+
+<tr><td>
+Mar. 1
+</td><td>
+Jon
+&nbsp;
+</td><td>
+The Kernel Trick &nbsp;
+</td></tr>
+
+<!--
+	<tr><td>
+	<b>Mar. 5 5-7pm</b>
+	</td><td>
+	Name of Instructor Goes here
+	</td><td>
+	<b>Midterm review session, MONDAY 6th, in NSH 3305. Please bring questions.</b>
+	</td></tr>
+-->
+
+<tr><td>
+Mar. 8
+</td><td>
+&nbsp;
+</td><td>
+**NO RECITATION
+</td></tr>
+
+<tr><td>
+Mar. 15*
+</td><td>
+&nbsp;
+</td><td>
+**NO RECITATION -- SPRING BREAK
+</td></tr>
+
+<tr><td>
+Mar. 22
+</td><td>
+Andy
+</td><td>
+Bayes Nets
+</td></tr>
+
+<tr><td>
+Mar. 29
+</td><td>
+Brian
+&nbsp;
+</td><td>
+Hidden Markov Models (Applied to Activity Recognition) 
+[<a href="Handouts/recitations/HMM-inference.pdf">inference notes</a>]
+</td></tr>
+
+<tr><td>
+Apr. 5
+</td><td>
+Purna&nbsp;
+</td><td>
+Structure Learning, Chow-Liu &nbsp;
+</td></tr>
+
+<tr><td>
+Apr. 12
+</td><td>
+Jon&nbsp;
+</td><td>
+EM for Gaussian Mixture Models, Spectral Clustering &nbsp;
+</td></tr>
+
+<tr><td>
+Apr. 19*
+</td><td>
+&nbsp;
+</td><td>
+** NO RECITATION -- University Closed
+</td></tr>
+
+<tr><td>
+Apr. 26
+</td><td>
+Purna
+&nbsp;
+</td><td>
+<!--Content --> &nbsp;
+</td></tr>
+
+<tr><td>
+May 3
+</td><td>
+Andy</td><td>
+MDPs and Reinforcement Learning <a href="http://www.cs.cmu.edu/~awm/rlsim/">RL Sim Applet</a>
+</td></tr>
+
+<tr><td>
+May 10
+</td><td>
+All TAs
+</td><td>
+Final exam review session
+</td></tr>
+
+</tbody>
+</table>
+<h2><font size="3"><br>
+</font></h2>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a
+ name="exam_schedule"></a>Exam
+Schedule</font></h2>
+<ul>
+  <font size="3"><br>
+  <li>Note: both the midterm and
+	the final will be open book, notes, papers, etc.,
+	but you are not allowed to use a computer.
+  </li>
+  <li><strong>Midterm:</strong>
+	Wednesday, Mar. 7, 10:30-11:50 am, Wean Hall 7500
+	(in class). </li>
+  <li><strong>Final:</strong>
+	Tuesday, May 15th,  1-4 p.m., location TBA
+</li>
+  </font>
+</ul>
+
+
+
+<h2><font size="3"><br>
+</font></h2>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a name="resources"></a>Additional
+Resources</font></h2>
+<p><font size="3">Here are some example questions here for
+studying for
+the midterm/final. Note that these are exams from earlier years, and
+contain some topics that will not appear in this year's final. And some
+topics will appear this year that do not appear in the following
+examples. </font></p>
+<ul>
+  <font size="3">
+  <li><a href="previous/dtreewithannotations.ppt">DTREE slides with annotations from review session on Monday</a></li>
+
+  <li><a href="previous/midterm2001.pdf">The 2001 midterm exam</a></li>
+  <li><a href="previous/midterm2001-solution.pdf">The 2001 midterm solutions</a></li>
+  <li><a href="previous/final-2001.ps">The 2001 final exam</a></li>
+  <li><a href="previous/final-2001-solutions.ps">Solutions to the 2001 final exam</a></li>
+  <li><a href="previous/midterm-2002.ps">The 2002 midterm exam</a></li>
+  <li><a href="previous/midterm2002-solution.pdf">Solutions to the 2002 midterm exam</a></li>
+
+  <li> Additional examples of midtermlike questions <a href="previous/midexample.ps">(PS)</a> or <a href="previous/midexample.pdf">(PDF)</a></li>
+  <li>Solutions to the additional examples <a href="previous/midexample-solutions.ps">(PS)</a> or <a href="previous/midexample-solutions.pdf">(PDF)</a></a>
+  </li>
+
+  <li><a href="previous/final-2002.pdf">Final Exam 2002 (some figs missing)</a> </li>
+  <li><a href="previous/final-answers-2002.txt">Answers for final Exam 2002</a></li>
+  <li><a href="previous/final_2002_awm_handwritten_answers.pdf">Andrew's handwritten answers for final Exam 2002</a></li>
+ <li><a href="previous/midterm2003.pdf">The 2003 midterm exam</a></li>
+ <li><a href="previous/midterm2003_with_ajits_recitation_notes.pdf"><B>Handwritten annotations to 2003 midterm by Ajit on Thursday evening</B></a></li>
+
+  <li><a href="previous/midterm2003-solution.pdf">Solutions to the 2003 midterm exam</a></li>
+ <li><a href="previous/final03.pdf">Final Exam 2003</a> </li>
+  <li><a href="previous/final03solution.pdf">Answers for final Exam 2003</a></li>
+ <li><a href="previous/midterm2004.pdf">The 2004 midterm exam</a></li>
+ <li><a href="previous/midterm2004-solution.pdf">Solutions to the 2004 midterm exam</a></li>
+ <li><a href="previous/15-781Fall2005MidtermSolutions.pdf">Solutions to the 2005 midterm exam</a></li>
+ <li><a href="previous/midterm-s06.pdf">The Spring 2006 midterm exam</a></li>
+ <li><a href="previous/midterm-sol-s06.pdf">Partial Solutions to the Spring 2006 midterm exam</a></li>
+ <li><a href="previous/midterm-fall06.pdf">The Fall 2006 midterm exam</a></li>
+ <li><a href="previous/midterm-fall06-solution.pdf">Solutions to the Fall 2006 midterm exam</a></li>
+ <li><a href="previous/fall06-final.pdf">The Fall 2006 final exam</a></li>
+ <li><a href="previous/fall06-final-solutions.pdf">Solutions to the Fall 2006 final exam</a></li>
+ <li><a href="previous/final-s2006.pdf">The Spring 2006 final exam</a></li>
+ <li><a href="previous/final-s2006-sol.pdf">Solutions to the Spring 2006 
+final exam</a></li>
+  <li><a href="http://www.cs.cmu.edu/~guestrin/Class/10701-S05/" target="_blank">Spring 2005 course webpage
+    </a></li>
+  <li><a href="http://www.cs.cmu.edu/~awm/10701" target="_blank">Fall 2005 course webpage
+    </a></li>
+
+
+</ul>
+
+  </font>
+</ul>
+<font size="3"><strong></strong></font>
+<ul>
+</ul>
+<h2><font size="3"><br>
+</font></h2>
+<h2 style="color: rgb(255, 255, 51);"><font size="3"><a name="non-cmu"></a>Note
+to people outside CMU </font></h2>
+<p><font size="3">Feel free to use the slides and materials
+available
+online here. Please email the instructors with any corrections or
+improvements. Additional slides and software are available at the <a
+ href="http://www.cs.cmu.edu/%7Etom/mlbook.html">Machine
+Learning
+textbook homepage</a> and at <a
+ href="http://www.cs.cmu.edu/%7Eawm/tutorials">Andrew
+Moore's tutorials
+page</a>. </font></p>
+</body>
+</html>
+

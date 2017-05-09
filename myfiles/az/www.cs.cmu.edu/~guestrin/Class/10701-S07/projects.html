@@ -1,0 +1,675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/TR/REC-html40"
+ xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <title>10-701 and 15-781 Machine
+Learning, Spring 2007</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <style type="text/css" media="screen"></style>
+  <meta content="Carlos Guestrin" name="author">
+  <meta content="MSHTML 6.00.2900.2604" name="GENERATOR">
+  <link href="projects_files/filelist.xml" rel="File-List">
+<!--[if !mso]> <STYLE>v\:* {
+BEHAVIOR: url(#default#VML) }
+o\:* { BEHAVIOR: url(#default#VML)
+} .shape {
+BEHAVIOR: url(#default#VML) }
+</STYLE> <![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+<body
+ style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 90);"
+ alink="#00ffff" link="#33ffff" vlink="#ff99ff">
+<div align="center">
+<h1><small>Suggested
+		Course Projects<br><br><a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.cmu.edu/afs/cs.cmu.edu/usr/guestrin/www/Class/10701/"
+ target="_blank">10-701 Machine Learning</a></small>
+</h1>
+</div>
+<p align="left"><br>
+<big><span style="font-weight: bold;">Your Course Project</span>
+</big><br>
+&nbsp;</p>
+<p align="left">Your class
+project is an opportunity for you to explore an interesting machine
+learning problem of your choice in the context of a real-world data
+set.&nbsp;  Below, you will find some project ideas, but the best idea
+would be to combine machine learning with problems in your own
+research area.  Your class project must be about new things you
+have done this semester, you can't use results you have developed
+in previous semesters. 
+
+<p align="left">
+Projects can be done by you as an individual, or in
+teams of two students.&nbsp;&nbsp; Each project will also be
+assigned a 701 instructor as a project consultant/mentor. &nbsp;
+They will consult with you on your ideas, but of course the final
+responsibility to define and execute an interesting piece of work is
+yours&nbsp; Your project will be worth 20% of your final class
+grade, and will have two final deliverables: </p>
+<ol>
+  <li>
+    <p align="left">a <b>writeup</b>
+in the form of a <a href="http://leon.bottou.com/nips/">NIPS paper</a>
+(8 pages maximum in <a href="http://leon.bottou.com/nips/">NIPS format</a>,
+including references, this page limit is strict), due <b>May
+10</b>, worth 60% of the project
+grade, and </p>
+  </li>
+  <li>
+    <p align="left">a <b>poster
+    </b>presenting your work for a
+special ML class poster session on <b>May 4, 2-5pm in the NSH Atrium</b>,
+  worth 20% of the project
+grade.&nbsp; </p>
+  </li>
+</ol>
+<p align="left">&nbsp;In
+addition, you must turn in a <b>midway
+progress report </b>(5 pages
+maximum in <a href="http://leon.bottou.com/nips/">NIPS format</a>,
+including references) describing the results of your first experiments
+by <b>April 16</b>,
+worth 20% of the project grade. Note that, as with any conference, the
+page limits are strict! Papers over the limit will not be considered.
+</p>
+<p align="left">&nbsp;</p>
+<p align="left"><big><span style="font-weight: bold;">Project Proposal</span>
+</big><br>
+&nbsp;</p>
+<p align="left">You must
+turn in a brief project proposal (1-page maximum) by March
+21st.&nbsp; Read the list of available data sets and potential
+project ideas below.&nbsp; You are encouraged to use one of these
+data sets, because we know that they have been successfully used for
+machine learning in the past. &nbsp; If you prefer to use a
+different data set, we will consider your proposal, but you must have
+access to this data already, and present a clear proposal for what you
+would do with it.&nbsp; <br>
+&nbsp;</p>
+<p align="left">Project proposal format:&nbsp; Proposals should be one page
+maximum.&nbsp; Include the following information:</p>
+<ul>
+  <li>
+    <p align="left">Project
+title </p>
+  </li>
+  <li>
+    <p align="left">Data
+set </p>
+  </li>
+  <li>
+    <p align="left">Project
+idea.&nbsp; This should be approximately two paragraphs. </p>
+  </li>
+  <li>
+    <p align="left">Software
+you will need to write. </p>
+  </li>
+  <li>
+    <p align="left">Papers
+to read.&nbsp; Include 1-3 relevant papers.&nbsp; You will
+probably want to read at least one of them before submitting your
+proposal.</p>
+  </li>
+  <li>
+    <p align="left">Teammate:
+will you have a teammate?&nbsp; If so, whom?&nbsp; Maximum team
+size is two students. </p>
+  </li>
+  <li>
+    <p align="left">April
+16 milestone: What will you complete by April 16?&nbsp;
+Experimental results of some kind are expected here. </p>
+  </li>
+</ul>
+<p align="left">&nbsp;</p>
+<hr style="width: 100%;" align="left">
+<p align="left"><big><span style="font-weight: bold;">Datasets and
+project
+suggestions:</span>&nbsp; </big>Below
+are descriptions of several data sets, and some suggested
+projects.&nbsp; The first few are spelled out in greater
+detail.&nbsp; You are encouraged to select and flesh out one of
+these projects, or make up you own well-specified project using these
+datasets.&nbsp; If you have other data sets you would like to work
+on, we would consider that as well, provided you already have access to
+this data and a good idea of what to do with it.<br>
+&nbsp;</p>
+
+<h2>Data Set Categories:</h2>
+
+<ul>
+	<li><a href="#fmri">fMRI Brain Imaging Data</a>
+	<li><a href="#image">Image Data</a>
+	<li><a href="#sensors">Sensor Network Data</a>
+	<li><a href="#text">Text Data</a>
+	<li><a href="#additional">Additional Data Sets</a>
+</ul>
+
+<hr style="width: 100%;" align="left">
+<h1 align="left"><a name="fmri">fMRI Brain Imaging Data</a></h1>
+<hr style="width: 100%;" align="left">
+<h2 align="left">
+<span style="font-weight: bold;">Brain
+imaging data</span> <span style="font-weight: bold;">(fMRI)</span></h2>
+<div style="text-align: left;"><a
+ href="http://www-2.cs.cmu.edu/afs/cs.cmu.edu/project/theo-81/www/">
+This data is available here</a></div>
+<p align="left">This data
+set contains a time series of images of brain activation, measured
+using fMRI, with one image every 500 msec. During this time, human
+subjects performed 40 trials of a sentence-picture comparison task
+(reading a sentence, observing a picture, and determining whether the
+sentence correctly described the picture). Each of the 40 trials lasts
+approximately 30 seconds. Each image contains approximately 5,000
+voxels (3D pixels), across a large portion of the brain. Data is
+available for 12 different human subjects.&nbsp; <br>
+<span style="font-weight: bold;">Available
+software</span>: we can provide
+Matlab software for reading the data, manipulating and visualizing it,
+and for training some types of classifiers (Gassian Naive Bayes, SVM). <br>
+<br>
+<br>
+<span style="font-weight: bold;">Project</span>
+<span style="font-weight: bold;">A1</span>:
+Bayes network classifiers for fMRI<br>
+<span style="font-weight: bold;">Project
+idea:</span> Gaussian Na&iuml;ve
+Bayes classifiers and SVMs have been used with this data to predict
+when the subject was reading a sentence versus perceiving a picture.
+Both of these classify 8-second windows of data into these two classes,
+achieving around 85% classification accuracy [Mitchell et al, 2004].
+This project will explore going beyond the Gaussian Na&iuml;ve
+Bayes classifier (which assumes voxel activities are conditionally
+independent), by training a Bayes network in particular a TAN tree
+[Friedman, et al., 1997]. Issues youll need to confront include which
+features to include (5000 voxels times 8 seconds of images is a lot of
+features) for classifier input, whether to train brain-specific or
+brain-independent classifiers, and a number of issues about efficient
+computation with this fairly large data set. Midpoint milestone: By
+April 12 you should have run at least one classification algorithm on
+this data and measured its accuracy using a cross validation test. This
+will put you in a good position to explore refinements of the
+algorithm, alternative feature encodings for the data, or competing
+algorithms, by the end of the semester. Project: Reducing
+dimensionality and classification accuracy.<br>
+<span style="font-weight: bold;">Papers
+to read</span>: "<a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.cmu.edu/%7Etom/mlj04-final-published.pdf"
+ target="_blank">Learning to Decode Cognitive States
+from Brain Images</a>," Mitchell et
+al., 2004, "<a onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.eecs.harvard.edu/%7Enir/Abstracts/FrGG1.html"
+ target="_blank">Bayesian Network Classifiers"</a>
+Friedman et al., 1997. <br>
+<br>
+<span style="font-weight: bold;">Project
+A2:</span> Dimensionality reduction
+for fMRI data<br>
+<span style="font-weight: bold;">Project
+idea:</span>&nbsp; Explore the
+use of dimensionality-reduction methods to improve classification
+accuracy with this data.&nbsp; Given the extremely high dimension
+of the input (5000 voxels times 8 images) to the classifier, it is
+sensible to explore methods for reducing this to a small number of
+dimension. For example, consider PCA, hidden layers of neural nets, or
+other relevant dimensionality reducing methods.&nbsp; PCA is an
+example of a method that finds lower dimension representations that <span
+ style="font-style: italic;">minimize error in
+reconstructing the data</span>.&nbsp;
+In contract, neural network hidden layes are lower dimensional
+representations of the inputs that <span style="font-style: italic;">minimize
+classification
+error</span> (but only find a local
+minimum).&nbsp; Does one of these work better?&nbsp; Does it
+depend on parameters such as the number of training examples?<br>
+<span style="font-weight: bold;">Papers
+to read</span>: "<a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.cmu.edu/%7Etom/mlj04-final-published.pdf"
+ target="_blank">Learning to Decode Cognitive States
+from Brain Images</a>," Mitchell et
+al., 2004, papers and textbook on PCA, neural nets, or whatever you
+propose to try.<br>
+<br>
+<span style="font-weight: bold;">Project
+A3: </span>Feature
+selection/feature invention for fMRI classification.<br>
+<span style="font-weight: bold;">Project
+idea:<span style="font-style: italic;">&nbsp;
+</span></span>As
+in many high dimensional data sets, automatic selection of a subset of
+features can have a strong positive impact on classifier
+accuracy.&nbsp; We have found that selecting features by the
+difference in their activity when the subject performs the task,
+relative to their activity while the subject is resting, is one useful
+strategy [Mitchell et al., 2004].&nbsp; In this project you could
+suggest, implement, and test alternative feature selection strategies
+(eg., consider&nbsp; the incremental value of adding a new feature
+to the current feature set, instead of scoring each feature independent
+of other features that are being selected), and see whether you can
+obtain higher classification accuracies.&nbsp;&nbsp;
+Alternatively, you could consider methods for synthesizing new features
+(e.g., define the 'smoothed value' of a voxel in terms of a spatial
+Gaussian kernel function applied to it and its neighbors, or define
+features by averaging voxels whose time series are highly correlated). <br>
+<span style="font-weight: bold;">Papers
+to read</span>: "<a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.cmu.edu/%7Etom/mlj04-final-published.pdf"
+ target="_blank">Learning to Decode Cognitive States
+from Brain Images</a>," Mitchell et
+al., 2004, papers on feature selection<br>
+<br>
+&nbsp;</p>
+<hr style="width: 100%;" align="left">
+
+<h1 align="left"><a name="image">Image Data</a></h1>
+<hr style="width: 100%;" align="left">
+
+
+<h2 align="left">
+<span style="font-weight: bold;">Character
+recognition (digits) data</span></h2>
+<p align="left">Optical
+character recognition, and the simpler digit recognition task, has been
+the focus of much ML research. We have two datasets on this topic. The
+first tackles the more general OCR task, on a small vocabulary of
+words: (Note that the first letter of each word was removed, since
+these were capital letters that would make the task harder for you.)</p>
+<p align="left"><b><a href="http://ai.stanford.edu/%7Ebtaskar/ocr/">http://ai.stanford.edu/~btaskar/ocr/</a></b></p>
+<p align="left">The second
+dataset is the now "classic" digit recognition task for outgoing mail
+zip codes:</p>
+<p align="left"><b><a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a></b></p>
+<p align="left"><b>Project
+suggestions:</b></p>
+<ul>
+  <li>
+    <p align="left">Learn a
+classifier to recognize the letter/digit </p>
+  </li>
+  <li>
+    <p align="left">Use an
+HMM to exploit correlations between neighboring letters in the general
+OCR case to improve accuracy. (Since ZIP codes don't have such
+constraints between neighboring digits, HMMs will probably not help in
+the digit case.) </p>
+  </li>
+  <li>
+    <p align="left">&nbsp;Apply
+a clustering/dimensionality reduction algorithm on this data, see if
+you get better classification on this lower dimensional space. </p>
+  </li>
+</ul>
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Image
+Segmentation Dataset</span></h2>
+<p align="left"><br>
+The goal is to segment images in a meaningful way.&nbsp; Berkeley
+collected three hundred images and paid students to hand-segment each
+one (usually each image has multiple
+hand-segmentations).&nbsp;&nbsp; Two-hundred of these images
+are training images, and the remaining 100 are test images.&nbsp;
+The dataset includes code for reading the images and ground-truth
+labels, computing the benchmark scores, and some other utility
+functions.&nbsp; It also includes code for a segmentation
+example.&nbsp; This dataset is new and the problem unsolved, so
+there is a chance that you could come up with the leading algorithm for
+your project.<br>
+<a onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.berkeley.edu/projects/vision/grouping/segbench/"
+ target="_blank">http://www.cs.berkeley.edu<wbr>/projects/vision/grouping<wbr>/segbench/</a><br>
+<br>
+<span style="font-weight: bold;">Project
+ideas</span>:<br>
+<b>Project B1</b>:
+Region-Based Segmentation <br>
+Most segmentation algorithms have focused on segmentation based on
+edges or based on discontinuity of color and texture.&nbsp; The
+ground-truth in this dataset, however, allows supervised learning
+algorithms to segment the images based on statistics calculated over
+regions.&nbsp; One way to do this is to "oversegment" the image
+into superpixels (Felzenszwalb 2004, code available) and merge the
+superpixels into larger segments.&nbsp; Come up with a set of
+features to represent the superpixels (probably based on color and
+texture), a classifier/regression algorithm (suggestion: boosted
+decision trees) that allows you to estimate the likelihood that two
+superpixels are in the same segment, and an algorithm for segmentation
+based on those pairwise likelihoods. Since this project idea is fairly
+time-consuming focusing on a specific part of the project may also be
+acceptable.&nbsp; <br>
+<span style="font-weight: bold;">Milestone</span>:
+By April 12, you should be able to estimate the likelihood that two
+superpixels are in the same segment and have a quantitative measure of
+how good your estimator is.&nbsp; You should also have an outline
+of how to use the likelihood estimates to form the final
+segmentation.&nbsp; The rest of the project will involve improving
+your likelihood estimation and your grouping algorithm, and in
+generating final results.&nbsp; <br>
+<span style="font-weight: bold;">Papers
+to read: </span>Some segmentation
+papers from Berkeley are available <a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.berkeley.edu/projects/vision/grouping/"
+ target="_blank">here </a><br>
+<br>
+<b>Project B2</b>:
+Supervised vs. Unsupervised Segmentation Methods <br>
+Write two segmentation algorithms (these may be simpler than the one
+above): a supervised method (such as logistic regression) and an
+unsupervised method (such as K-means). Compare the results of the two
+algorithms. For your write-up, describe the two classification methods
+that you plan to use.<br>
+<span style="font-weight: bold;">Milestone</span>:
+By April 12, you should have completed at least one of your
+segmentation algorithms and have results for that algorithm. &nbsp;
+<br>
+<span style="font-weight: bold;">Papers
+to read: </span>Some segmentation
+papers from Berkeley are available <a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.berkeley.edu/projects/vision/grouping/"
+ target="_blank">here </a><br>
+&nbsp;</p>
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Object
+Recognition </span></h2>
+<p align="left"><br>
+The Caltech 256 dataset contains images of 256 object categories
+taken at varying orientations, varying lighting conditions, and with
+different backgrounds. <br>
+<a onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.vision.caltech.edu/Image_Datasets/Caltech256/"
+ target="_blank">http://www.vision.caltech.edu/Image_Datasets/Caltech256/</a><br>
+<br>
+<span style="font-weight: bold;">Project
+ideas:</span> <br>
+&nbsp;</p>
+<ul>
+  <li>
+    <p align="left">You can try to create an object recognition system which can 
+identify which object category is the best match for a given test image. </p>
+  </li>
+  <li>
+    <p align="left">Apply clustering to learn object categories without supervision </p>
+  </li>
+</ul><span style="font-weight: bold;">Papers
+to read: </span>See link. <br>
+</p>
+<p align="left">&nbsp;</p>
+</div>
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Face
+recognition data</span>&nbsp; </h2>
+<p align="left">This
+dataset contains 640 images of faces.&nbsp; The faces themselves
+are images of&nbsp; 20 former Machine Learning students and
+instructors, with about 32 images of each person.&nbsp; Images vary
+by the pose (direction the person is looking), expression (happy/sad),
+face jewelry (sun glasses or not), etc.&nbsp; This gives you a
+chance to consider a variety of classification problems ranging from
+person identification to sunglass detection.&nbsp; The data,
+documentation, and associated code are available <a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/faces.html"
+ target="_blank">here</a>.<br>
+<br>
+<span style="font-weight: bold;">Available
+software</span>: The same website
+provides an implementation of a neural network classifier for this
+image data.&nbsp; The code is quite robust, and pretty well
+documented in an associated homework assignment.<br>
+<br>
+<span style="font-weight: bold;">Project
+ideas:</span> <br>
+&nbsp;</p>
+<ul>
+  <li>
+    <p align="left">Try
+SVM's on this data, and compare their performance to that of the
+provided neural networks </p>
+  </li>
+  <li>
+    <p align="left">Apply a
+clustering algorithm to find "similar" faces </p>
+  </li>
+</ul>
+</div>
+
+<hr style="width: 100%;" align="left">
+<h1 align="left"><a name="sensors">Sensor Network Data</a></h1>
+
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Sensor
+network data</span></h2>
+<p align="left">&nbsp;</p> <p align="left">
+<!--[if gte vml 1]><v:shapetype id=_x0000_t75 coordsize = "21600,21600" o:preferrelative = "t" o:spt = "75" filled = "f" stroked = "f"
+path = " m@4@5 l@4@11@9@11@9@5 xe"><v:stroke joinstyle = "miter"></v:stroke><v:formulas><v:f eqn =
+"if lineDrawn pixelLineWidth 0 "></v:f><v:f eqn = "sum @0 1 0 "></v:f><v:f eqn = "sum 0 0 @1 "></v:f><v:f eqn = "prod @2 1 2 "></v:f><v:f eqn =
+"prod @3 21600 pixelWidth "></v:f><v:f eqn = "prod @3 21600 pixelHeight "></v:f><v:f eqn = "sum @0 0 1 "></v:f><v:f eqn =
+"prod @6 1 2 "></v:f><v:f eqn = "prod @7 21600 pixelWidth "></v:f><v:f eqn = "sum @8 21600 0 "></v:f><v:f eqn = "prod @7 21600 pixelHeight "></v:f><v:f eqn =
+"sum @10 21600 0 "></v:f></v:formulas><v:path o:extrusionok = "f" gradientshapeok = "t" o:connecttype = "rect"></v:path><o:lock aspectratio="t"
+v:ext="edit"></o:lock></v:shapetype><v:shape id=_x0000_s1025 style="WIDTH: 327.6pt; HEIGHT: 171pt" type = "#_x0000_t75" coordsize =
+"21600,21600" alt = "" filled = "t"><v:imagedata o:title="" src = "projects_files/image001.wmz"></v:imagedata></v:shape><![endif]--><!--[if !vml]-->
+<img src="projects_files/image002.gif" v:shapes="_x0000_s1025" border="0"
+ height="285" width="546"><!--[endif]--></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>Using
+this 54-node sensor network deployment, we collected temperature,
+humidity, </b>and light data, along
+with the voltage level of the batteries at each node. The data was
+collected every 30 seconds, starting around 1am on February 28th 2004. </p>
+<p align="left"><b><a
+ href="http://www-2.cs.cmu.edu/%7Eguestrin/Research/Data/">http://www-2.cs.cmu.edu/~guestrin/Research/Data/</a></b></p>
+<p align="left">This is a
+"real" dataset, with lots of missing data, noise, and failed sensors
+giving outlier values, especially when battery levels are low.</p>
+<p align="left"><b>Project
+ideas:</b></p>
+<ul>
+  <li>
+    <p align="left">Compare
+regression algorithms </p>
+  </li>
+  <li>
+    <p align="left">Detect
+failed sensors </p>
+  </li>
+  <li>
+    <p align="left">Learn
+graphical models representing the correlations between measurements at
+different nodes </p>
+  </li>
+  <li>
+    <p align="left">Develop
+new distributed algorithms for solving a learning task on this data </p>
+  </li>
+</ul>
+<p align="left"><b>Papers:</b></p>
+<ul>
+  <li>
+    <p align="left"><a
+ href="http://www-2.cs.cmu.edu/%7Eguestrin/Publications/IPSN2004/ipsn2004.pdf">http://www-2.cs.cmu.edu/~guestrin/Publications/IPSN2004/ipsn2004.pdf</a>
+    </p>
+  </li>
+  <li>
+    <p align="left"><a
+ href="http://www-2.cs.cmu.edu/%7Eguestrin/Publications/VLDB04/vldb04.pdf">http://www-2.cs.cmu.edu/~guestrin/Publications/VLDB04/vldb04.pdf</a>
+    </p>
+  </li>
+</ul>
+
+<div align="center">&nbsp;
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Precipitation
+data</span></h2>
+<p align="left">This
+dataset has includes 45 years of daily precipitation data from the
+Northwest of the US:</p>
+<p align="left"><a
+ onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www.jisao.washington.edu/data_sets/widmann/"
+ target="_blank">http://www.jisao.washington<wbr>.edu/data_sets/widmann/</a>
+</p>
+<p align="left"><b>Project
+ideas:</b></p>
+<ul>
+  <li>
+    <p align="left">Weather
+prediction: Learn a probabilistic model to predict rain levels </p>
+  </li>
+  <li>
+    <p align="left">Sensor
+selection: Where should you place sensor to best predict rain </p>
+  </li>
+</ul>
+<p align="left">&nbsp;</p>
+</div>
+	
+<hr style="width: 100%;" align="left">
+<h1 align="left"><a name="text">Text Data</a></h1>
+	
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Netflix Prize Dataset</span></h2>
+<p align="left"><br>
+The Netflix Prize data set gives 100 million records of the form "user X rated movie Y a 4.0 on 2/12/05".  The data is available here: <a href="http://www.netflixprize.com">Netflix Prize</a></p>
+<br>
+<span style="font-weight: bold;">Project ideas</span>:<br>
+<span style="align: left;"
+<ul align="left">
+	<li>Can you predict the rating a user will give on a movie from the movies that user has rated in the past, as well as the ratings similar users have given similar movies?
+	<li>Can you discover clusters of similar movies or users?
+</ul>
+&nbsp;
+</span>
+<hr style="width: 100%;" align="left">
+
+<h2 align="left"><span style="font-weight: bold;">Enron E-mail Dataset</span></h2>
+<p align="left"><br>
+The Enron E-mail data set contains about 500,000 e-mails from about 150 users.
+The data set is available here: <a href="http://www.cs.cmu.edu/~enron/">Enron Data</a>
+</p>
+<br>
+<span style="font-weight: bold;">Project ideas</span>:<br>
+<span style="align: left;"
+<ul align="left">
+	<li>Can you classify the text of an e-mail message to decide who sent it?
+</ul>
+&nbsp;
+</span>
+
+<hr style="width: 100%;" align="left">
+<h2 align="left"><span style="font-weight: bold;">Twenty
+Newgroups text data</span></h2>
+<p align="left">This data
+set contains 1000 text articles posted to each of 20 online newgroups,
+for a total of 20,000 articles.&nbsp; For documentation and
+download, see <a onclick="return top.js.OpenExtLink(window,event,this)"
+ href="http://www-2.cs.cmu.edu/afs/cs/project/theo-11/www/naive-bayes.html"
+ target="_blank">this website</a>.&nbsp;
+This data is useful for a variety of text classification and/or
+clustering projects.&nbsp; The "label" of each article is which of
+the 20 newsgroups it belongs to.&nbsp; The newsgroups (labels) are
+hierarchically organized (e.g., "sports", "hockey").<br>
+<br>
+<span style="font-weight: bold;">Available
+software</span>: The same website
+provides an implementation of a Naive Bayes classifier for this text
+data.&nbsp; The code is quite robust, and some documentation is
+available, but it is difficult code to modify.<br>
+<br>
+<span style="font-weight: bold;">Project
+ideas:</span> <br>
+&nbsp;</p>
+<ul>
+  <li>
+    <p align="left">EM for
+text classification in the case where you have labels for some
+documents, but not for others&nbsp; (see McCallum et al, and come
+up with your own suggestions) <br>
+&nbsp; </p>
+  </li>
+  <li>
+    <p align="left">Make up
+your own text learning problem/approach </p>
+  </li>
+</ul>
+<p align="left"><b>Papers:</b></p>
+<ul>
+  <li>
+    <p align="left"><a
+ href="http://jmlr.csail.mit.edu/papers/v3/blei03a.html">Latent Dirichlet Allocation</a>
+    </p>
+  </li>
+  <li>
+    <p align="left"><a
+ href="http://www.cs.brown.edu/~th/papers/Hofmann-UAI99.pdf">Probabilistic Latent Semantic Analysis</a>
+    </p>
+  </li>
+<li>
+    <p align="left"><a
+ href="http://www.cs.umass.edu/~mccallum/papers/emcat-mlj2000.ps">Text Classification from Labeled and Unlabeled Documents using EM</a>
+    </p>
+  </li>
+</ul>
+<p align="left">
+<br>
+&nbsp;</p>
+
+<hr style="width: 100%;" align="left">
+<h2 align="left">WebKB Data Set</h2>
+<p align="left">This dataset contains webpages from 4 universities, labeled with whether they are professor, student, project, or other pages.</p>
+<p align="left"><a href="http://www-2.cs.cmu.edu/%7Ewebkb/">http://www-2.cs.cmu.edu/~webkb/</a><br>
+&nbsp;</p>
+<p align="left"><b>Project
+ideas:</b></p>
+<ul>
+  <li>
+    <p align="left">Can you learn classifiers to predict the type of a webpage from the text?</p>
+  </li>
+  <li>
+  <p align="left">Can you improve accuracy by exploiting correlations between pages that point to each other? </p> 
+  </li>
+</ul>
+<p align="left"><b>Papers:</b></p>
+<ul>
+  <li>
+    <p align="left"><a href="http://www-2.cs.cmu.edu/%7Ewebkb/">http://www-2.cs.cmu.edu/~webkb/</a>
+    </p>
+  </li>
+</ul>
+<p align="left">
+&nbsp;</p>
+
+
+<hr style="width: 100%;" align="left">
+<h1 align="left"><a name="additional"><span style="font-weight: bold;">Additional Data Sets</span></a>
+</h1>
+<hr style="width: 100%;" align="left">
+<p align="left">There are
+many other datasets out there. UC Irvine has a repository that could be
+useful for you project:</p>
+<p align="left"><a
+ href="http://www.ics.uci.edu/%7Emlearn/MLRepository.html">http://www.ics.uci.edu/~mlearn/MLRepository.html</a></p>
+<p align="left">Sam Roweis
+also has a link to several datasets out there:</p>
+<p align="left"><a href="http://www.cs.toronto.edu/%7Eroweis/data.html">http://www.cs.toronto.edu/~roweis/data.html</a><br>
+&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</div>
+</body>
+</html>

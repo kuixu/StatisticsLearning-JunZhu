@@ -1,0 +1,118 @@
+1a: MLE argmax_h P(data|h) --- what makes the data most likely
+    MAP argmax_h P(h|data) --- what hypothesis does the data make most
+                               likely; requires prior on h
+
+1b: VC(H) = |X|
+
+1c (i):
+             Z
+           /   \
+          /     \
+          V     V
+ 
+          X     Y
+
+1c(ii) 5 params
+
+1c(iii) 7 params
+
+1d : FALSE: estimate is optimistic because it might not be paying for training
+            set noise
+
+1e: TRUE
+
+1f: TRUE (though not covered in 2003)
+
+1g: FALSE: Both can hit local minima
+
+1h: FALSE: MDPs have fully observed state whereas HMMs have observation
+           symbols that are stochastically dependent on state
+
+2a Initialize with if [Attribute value 1] then class
+
+   Taking the next example...
+
+     If it is correctly classified do nothing
+     Otherwise pace at the root one of the attributes with the corresponding
+       classification
+
+2b (Assuming lists are of depth d)
+
+        4^d * k! / (k - d)!
+
+2c m >= 1/eps ( log |H| + log (1/delta) ) with eps = 0.1, delta = 0.1
+
+2d |H| = 2^k and m >= 10 ( k log 2 + log 10 )
+
+3a The centroids found by k-means can get pushed away from each other so
+   the are further apart than the true means that generated the data.
+
+3d One difference is that GMM elements may be long and thin
+
+4a 0.8
+
+4b 0.18
+
+4c 0.44
+
+4d 0.2 (Since P(yell) is 0.2 no matter what the state)
+
+4e HAAAA
+
+5a: A and C
+
+5b: 
+
+    P( A ^ B | C ) = 1/8         P( A ^ B | ~C ) = 2/8
+    P(~A ^ B | C ) = 4/8         P(~A ^ B | ~C ) = 1/8
+    P( A ^~B | C ) =   0         P( A ^~B | ~C ) = 5/8
+    P(~A ^~B | C ) = 3/8         P(~A ^~B | ~C ) =   0
+
+    P(C) = 1/2    P(~C) = 1/2
+
+5c: 
+    P(C) = 1/2    P(~C) = 1/2
+
+    P(A|C) = 1/8   P(A|~C) = 7/8 
+    P(B|C) = 5/8   P(B|~C) = 3/8   [ P(~A|..) and P(~B|..) defined implicitly]
+
+5d: C=1
+
+5e: C=1
+
+6b: w = (0,2) b = -5
+
+6c: It's possible
+
+
+   - - - - - - -                  - + + + + 
+   x=-1               x=0              x=+1
+
+                |------------------|
+
+   For small C would choose this margin
+
+7a:  3
+7b:  30/7
+7c:  18/4
+7d:  18/4
+
+7e: Yes. TRAINING set error is zero because each point is closest to itself
+
+7f: Same answer
+
+8a: 0
+8b: 3/8
+8c: 1/4
+8d: 1/4
+8e: 1/4
+8f: 0
+
+9a: No arcs
+
+9b: A ---> C <---- B
+
+9c: Full connection
+
+10,11: Am trying to find the figure that goes with this question!!
+

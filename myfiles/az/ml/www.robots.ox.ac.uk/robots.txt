@@ -1,0 +1,145 @@
+#
+# If you wish to allow access to only the Oxford robot and no other,
+# then you can use the following as your robots.txt file
+#
+User-agent: oxbot
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+#
+# The following three for "reputable" Web search engines...
+#
+# www.lycos.com -- limited access
+User-agent: lycos
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# www.altavista.com -- limited access
+User-agent: scooter
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# www.excite.com -- limited access
+User-agent: architext
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# www.google.com -- limited access
+User-agent: googlebot
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# search.msn.com -- limited access
+User-agent: msnbot
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /img/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# web.archive.org -- limited access
+User-agent: ia_archiver
+Disallow: /admin/
+Disallow: /css/
+Disallow: /exams/
+Disallow: /ftp/
+Disallow: /hardware/
+Disallow: /internal/
+Disallow: /local/
+Disallow: /manual/
+Disallow: /robots/
+Disallow: /sysadmin/
+Disallow: /~tvg/wiki/
+Disallow: /~vgg/workshops/oxford12/
+Disallow: /internal-old/
+Disallow: /local-old/
+Disallow: /sysadmin-old/
+
+# W3C link-checker -- full access
+User-agent: W3C-checklink
+Disallow:
+
+# Block everything else...
+User-agent: *
+Disallow: /
