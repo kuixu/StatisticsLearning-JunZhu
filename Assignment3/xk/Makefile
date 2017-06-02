@@ -1,2 +1,2 @@
 all:
-	xelatex Assignment2-xk.tex &&  open Assignment2-xk.pdf
+	xelatex Assignment3-xk.tex &&  open Assignment3-xk.pdf
