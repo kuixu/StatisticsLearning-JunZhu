@@ -1,0 +1,9 @@
+\BOOKMARK [1][-]{section.1}{Preparation}{}% 1
+\BOOKMARK [1][-]{section.2}{Variational\040inference\040for\0402-D\040Gaussian\040Mixture}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Write\040the\040variational\040lower\040bound}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Detailed\040Description}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Re}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Gaussian\040Mixture\040VAE}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Detailed\040Description}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Results}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Implemention}{section.3}% 9
